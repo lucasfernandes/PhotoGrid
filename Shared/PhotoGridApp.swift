@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct PhotoGridApp: App {
+    var photoStore = PhotoStore()
+    var favoriteStore = FavoriteStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(photoStore)
+                .environmentObject(favoriteStore)
         }
     }
 }
