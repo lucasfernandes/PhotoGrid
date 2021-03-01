@@ -64,7 +64,6 @@ struct DetailPhotoView: View {
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .edgesIgnoringSafeArea(.all)
         .onAppear(perform: toogleIcon)
     }
 }

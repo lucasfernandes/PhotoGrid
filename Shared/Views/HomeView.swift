@@ -78,6 +78,7 @@ struct HomeView: View {
                         .font(.title2)
                         .foregroundColor(.primary)
                 }.accessibility(identifier: "add"))
+            .onAppear(perform: self.requestPermissions)
         }
         
         .fullScreenCover(item: $activeSheet, onDismiss: self.dismissSheet) { item in

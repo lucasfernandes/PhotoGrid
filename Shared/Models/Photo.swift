@@ -17,14 +17,3 @@ class Photo: ObservableObject, Identifiable {
         self.image = image
     }
 }
-
-extension Photo {
-    static func previewPhotosGenerate() -> [Photo] {
-        var photos = [Photo]()
-        for item in 1...7 {
-            photos.append(Photo(id: UUID().description, image: UIImage(imageLiteralResourceName: item.description)))
-        }
-        
-        return photos
-    }
-}

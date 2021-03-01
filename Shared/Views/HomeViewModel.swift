@@ -42,6 +42,7 @@ extension HomeView {
     }
     
     func takePhoto() {
+        self.requestPermissions()
         self.activeSheet = .second
     }
     
@@ -49,17 +50,18 @@ extension HomeView {
         self.photoStore.saveImage(image: image)
     }
     
-    // TODO: permissions request
     func requestPermissions() {
         //Camera
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
                 //access granted
             } else {
-                let alert = UIAlertController()
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                }))
+                DispatchQueue.main.async {
+                    let alert = UIAlertController()
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    }))
+                }
             }
         }
         
@@ -68,9 +70,11 @@ extension HomeView {
         if photos == .notDetermined {
             PHPhotoLibrary.requestAuthorization({status in
                 if status == .authorized {
-                    
+                    //access granted
                 } else {
-                    
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    }
                 }
             })
         }
