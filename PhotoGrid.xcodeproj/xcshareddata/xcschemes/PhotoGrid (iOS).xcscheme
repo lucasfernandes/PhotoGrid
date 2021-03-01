@@ -39,6 +39,26 @@
                ReferencedContainer = "container:PhotoGrid.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E31617B325ED56C600BE29B5"
+               BuildableName = "PhotoGridTests.xctest"
+               BlueprintName = "PhotoGridTests"
+               ReferencedContainer = "container:PhotoGrid.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E31617C425ED574700BE29B5"
+               BuildableName = "PhotoGridUITests.xctest"
+               BlueprintName = "PhotoGridUITests"
+               ReferencedContainer = "container:PhotoGrid.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
