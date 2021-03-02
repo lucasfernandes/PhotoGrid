@@ -1,7 +1,7 @@
 # PhotoGrid
 
 PhotoGrid is a simple app to let your best photos organized. <br/>
-You can check your prefered photos like favorites also.
+You can mark your prefered photos like favorites also.
 
 ## Features
   - Take a new photo using camera device 
