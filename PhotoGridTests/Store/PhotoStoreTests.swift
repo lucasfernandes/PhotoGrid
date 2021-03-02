@@ -12,9 +12,12 @@ import Photos
 class PhotoStoreTests: XCTestCase {
     
     var photoStore: PhotoStore!
+    var photoLibraryService: PhotoLibraryService!
     
     override func setUp() {
-        photoStore = PhotoStore()
+        photoLibraryService = PhotoLibraryService()
+        photoStore = PhotoStore(photoLibraryService: photoLibraryService)
+        photoLibraryService.delegate = photoStore
     }
 
     func testMakePhoto() {
@@ -32,5 +35,13 @@ class PhotoStoreTests: XCTestCase {
         
         photoStore.saveImageIdentifierToUserDefaults(identifier: identifier)
         XCTAssertEqual(photoStore.localImageIdentifiers.first, identifier)
+    }
+    
+    func testSaveImageToLibrary() {
+        // TODO
+    }
+    
+    func testDeletingImageFromLibrary() {
+        // TODO
     }
 }

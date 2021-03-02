@@ -8,7 +8,9 @@
 import UIKit
 import Photos
 
-class PhotoStore: NSObject, ObservableObject {
+class PhotoStore: ObservableObject {
+    let photoLibraryService: PhotoLibraryService
+    
     @Published var photos = [Photo]()
     @Published var message: Message?
     @Published var selectedPhoto: Photo?
@@ -17,8 +19,9 @@ class PhotoStore: NSObject, ObservableObject {
     var localImageIdentifiers = [String]()
     var lastSavedImage: UIImage?
     
-    override init() {
-        super.init()
+    init(photoLibraryService: PhotoLibraryService) {
+        self.photoLibraryService = photoLibraryService
+        self.photoLibraryService.delegate = self
         self.getAllPhotos()
     }
 }
@@ -32,10 +35,11 @@ extension PhotoStore {
             fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate",
                                                              ascending: true)]
             
-            self.allAssets = PHAsset.fetchAssets(withLocalIdentifiers: self.localImageIdentifiers,
-                                                 options: fetchOptions)
-            
-            var imagesToRequest = [PHAsset]()
+            self.photoLibraryService.fetchAssets(identifiers: self.localImageIdentifiers) { assets in
+                self.allAssets = assets
+            }
+
+            var imagesToRequest = self.photoLibraryService.emptyAssetsArray()
             guard let results = self.allAssets, results.count > 0 else { return }
             
             results.enumerateObjects { object, index, stop in
@@ -44,52 +48,20 @@ extension PhotoStore {
                 }
             }
             
-            let options = PHImageRequestOptions()
-            options.isSynchronous = true
-            options.deliveryMode = .highQualityFormat
-            let targetSize = CGSize(width: 120, height: 120)
-            
             for asset in imagesToRequest {
-                PHImageManager.default().requestImage(for: asset,
-                                                      targetSize: targetSize,
-                                                      contentMode: .aspectFill,
-                                                      options: options,
-                                                      resultHandler: { image, _ in
-                    self.photos.append(self.makePhoto(asset: asset, image: image!))
-                })
+                self.photoLibraryService.requestImage(asset: asset) { image in
+                    self.photos.append(self.makePhoto(asset: asset, image: image))
+                }
             }
         }
     }
     
     func saveImage(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCallBack), nil)
-    }
-    
-    @objc func saveCallBack(_ image: UIImage,
-                            didFinishSavingWithError error: Error?,
-                            contextInfo: UnsafeRawPointer) {
-        if error != nil  {
-            self.message = Message.generate(type: .error, action: .add)
-            return
-        } else {
-        
-            let lastAssetFromLibrary = getLatestAssetFromLibrary()
-            let photo = self.makePhoto(asset: lastAssetFromLibrary, image: image)
-            self.saveImageIdentifierToUserDefaults(identifier: lastAssetFromLibrary.localIdentifier)
-            self.message = Message.generate(type: .success, action: .add)
-            
-            DispatchQueue.main.async {
-                self.photos.append(photo)
-            }
-            
-            // TODO: callback after save to show success message
-        }
+        self.photoLibraryService.saveImageToLibrary(image: image)
     }
     
     func getLatestAssetFromLibrary() -> PHAsset {
-        let fetchOptions = PHFetchOptions()
-        let allAssets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        return allAssets.lastObject!
+        return self.photoLibraryService.lastAssetFromLibrary()
     }
     
     func makePhoto(asset: PHAsset, image: UIImage) -> Photo {
@@ -111,24 +83,42 @@ extension PhotoStore {
     }
     
     func deletePhoto(id: String) {
-        PHPhotoLibrary.shared().performChanges({
-            let imageAssetToDelete = PHAsset.fetchAssets(withLocalIdentifiers: [id], options: nil)
-            PHAssetChangeRequest.deleteAssets(imageAssetToDelete)
-        }, completionHandler: {success, error in
-            if error != nil {
+        self.photoLibraryService.deleteAsset(identifier: id) { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
                 self.message = Message.generate(type: .error, action: .delete)
-                return
-            } else {
-            
-                self.localImageIdentifiers.removeAll(where: { $0 == id })
-                UserDefaults.standard.set(self.localImageIdentifiers, forKey: "Images")
-                
-                DispatchQueue.main.async {
-                    self.photos.removeAll(where: { $0.id == id })
-                    self.message = Message.generate(type: .success, action: .delete)
+            case .success(let isSuccess):
+                if isSuccess {
+                    self.localImageIdentifiers.removeAll(where: { $0 == id })
+                    UserDefaults.standard.set(self.localImageIdentifiers, forKey: "Images")
+                    
+                    DispatchQueue.main.async {
+                        self.photos.removeAll(where: { $0.id == id })
+                        self.message = Message.generate(type: .success, action: .delete)
+                    }
                 }
-                // TODO: callback after deletePhoto to show delete message
             }
-        })
+        }
+    }
+}
+
+extension PhotoStore: PHPPhotoLibraryFacadeSave {
+    func onAfterSaveImageToLibrary(image: UIImage?, error: Error?) {
+        if error != nil {
+            self.message = Message.generate(type: .error, action: .add)
+            return
+        }
+        
+        let lastAssetFromLibrary = getLatestAssetFromLibrary()
+        let photo = self.makePhoto(asset: lastAssetFromLibrary, image: image!)
+        self.saveImageIdentifierToUserDefaults(identifier: lastAssetFromLibrary.localIdentifier)
+        self.message = Message.generate(type: .success, action: .add)
+        
+        DispatchQueue.main.async {
+            self.photos.append(photo)
+        }
+        
+        // TODO: callback after save to show success message
     }
 }
