@@ -18,7 +18,7 @@ You can check your prefered photos like favorites also.
 :<img src="https://user-images.githubusercontent.com/29531/109706525-d2a0a480-7b77-11eb-90f7-321f222c7fe6.png" width="180">|<img src="https://user-images.githubusercontent.com/29531/109709656-835c7300-7b7b-11eb-997b-bba1b73661df.png" width="180">|<img src="https://user-images.githubusercontent.com/29531/109706593-e946fb80-7b77-11eb-9960-b992611d20e2.png" width="180">|<img src="https://user-images.githubusercontent.com/29531/109710276-3d53df00-7b7c-11eb-82cd-113732edc0e7.png" width="180">|<img src="https://user-images.githubusercontent.com/29531/109711258-6e80df00-7b7d-11eb-8913-874b9329a6c5.png" width="180">
 
 
-# DarkMode
+## DarkMode
 
   Added Photos    |     Take a Photo             
 :----------------:|:-------------------------:
