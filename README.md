@@ -12,8 +12,8 @@
   - Product -> Test or Command + U to run the test suite.
 - Features
   - Take a new photo using camera device 
-    - or pick one from the the library photo if you need to use on a simulator
-  - See you photos on PhotoGrid list
+    - or pick one from the the library photo if you need to use on a simulator for tests
+  - See your photos on PhotoGrid list
   - Tap photos in the list to see it larger
   - Users can mark a photo as a favorite to see it on PhotoGrid’s list
   - Delete photo with a longpress. 
