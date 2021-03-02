@@ -114,6 +114,10 @@ extension PhotoStore: PhotoLibraryDelegate {
         let identifier = UIDevice.current.isSimulator
             ? lastIdentifier
             : getLatestAssetFromLibrary().localIdentifier
+        
+        if self.localImageIdentifiers.contains(identifier!) {
+            return
+        }
 
         let photo = self.makePhoto(identifier: identifier!, image: image!)
         self.saveImageIdentifierToUserDefaults(identifier: identifier!)
