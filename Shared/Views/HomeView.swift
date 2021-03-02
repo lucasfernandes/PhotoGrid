@@ -15,6 +15,7 @@ struct HomeView: View {
     
     // Image Picker
     @State var inputImage: UIImage?
+    @State var inputIdentifier: String?
     
     @EnvironmentObject var photoStore: PhotoStore
     @EnvironmentObject var favoriteStore: FavoriteStore
@@ -53,8 +54,10 @@ struct HomeView: View {
                                 .background(Color(UIColor.systemBackground))
                                 .onTapGesture {self.openPhoto(photo: photo)}
                                 .onLongPressGesture {self.deletePhoto(id: photo.id)}
+                                .accessibility(identifier: "photo\(photo.id)")
                         }
                     }
+                    .accessibility(identifier: "grid")
 
                     if photoStore.photos.count == 0 {
                         VStack {
@@ -88,7 +91,7 @@ struct HomeView: View {
                     .environmentObject(photoStore)
                     .environmentObject(favoriteStore)
             case .second:
-                ImagePicker(image: self.$inputImage)
+                ImagePicker(image: self.$inputImage, identifier: self.$inputIdentifier)
                     .edgesIgnoringSafeArea(.all)
             case .third:
                 Text("x")

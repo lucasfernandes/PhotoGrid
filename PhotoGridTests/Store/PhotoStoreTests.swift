@@ -25,7 +25,7 @@ class PhotoStoreTests: XCTestCase {
         let image = UIImage(imageLiteralResourceName: "1")
         
         let photo = Photo(id: UUID().description, image: image)
-        let generatedPhoto = photoStore.makePhoto(asset: asset, image: image)
+        let generatedPhoto = photoStore.makePhoto(identifier: asset.localIdentifier, image: image)
         
         XCTAssertEqual(photo.image, generatedPhoto.image)
     }

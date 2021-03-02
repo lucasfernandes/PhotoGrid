@@ -16,6 +16,7 @@ struct DetailsHeaderView: View {
             VStack {
                 Text("\($photoStore.photos.wrappedValue.count)")
                     .fontWeight(.bold)
+                    .accessibility(identifier: "photosCount")
                 Text("Photos")
                     .font(.callout)
             }
@@ -23,6 +24,7 @@ struct DetailsHeaderView: View {
             VStack {
                 Text("\($favoriteStore.favorites.wrappedValue.count)")
                     .fontWeight(.bold)
+                    .accessibility(identifier: "favoritesCount")
                 Text("Favorites")
                     .font(.callout)
             }

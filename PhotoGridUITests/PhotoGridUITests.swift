@@ -25,17 +25,49 @@ class PhotoGridUITests: XCTestCase {
         app.launch()
     }
     
+    func addNewPhoto() {
+        app.buttons["add"].tap()
+        app.buttons["Photos"].tap()
+        app.images.element(boundBy: 3).tap()
+    }
+    
     func testShouldAddANewPhotoAndCounts1OnTheList() {
         givePermissions()
         let text = app.staticTexts["zeroPhotosFound"].label
         XCTAssertEqual(text, "Add a new photo to your PhotoGrid!")
         
-        app.buttons["add"].tap()
-        app.buttons["Photos"].tap()
-        app.images.element(boundBy: 3).tap()
+        addNewPhoto()
         
         sleep(10)
-        XCTAssertEqual(app.staticTexts["1"].label, "1")
+        XCTAssertEqual(app.staticTexts["photosCount"].label, "1")
         XCTAssertTrue(app.staticTexts["Photos"].exists)
+    }
+    
+    func testShouldMarkAPhotoAsFavoriteAndSeeOnHome() {
+        givePermissions()
+
+        let image = app.otherElements["grid"].images.firstMatch
+        image.tap()
+        
+        app.buttons["favorite"].tap()
+        app.buttons["close"].tap()
+        
+        sleep(3)
+        
+        XCTAssertEqual(app.staticTexts["favoritesCount"].label, "1")
+    }
+    
+    
+    func testShouldRemoveLastPhotoAdded() {
+        givePermissions()
+
+        let image = app.otherElements["grid"].images.firstMatch
+        image.press(forDuration: 1)
+
+        app.alerts.firstMatch.buttons.element(boundBy: 1).tap()
+
+        sleep(3)
+        XCTAssertFalse(app.staticTexts["Photos"].exists)
+        XCTAssertFalse(app.staticTexts["Favorites"].exists)
     }
 }

@@ -15,8 +15,9 @@
 		E319909B25E72B0D005D5C43 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319909A25E72B0D005D5C43 /* ImagePicker.swift */; };
 		E31990A825E7E8D7005D5C43 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31990A725E7E8D7005D5C43 /* PhotoStore.swift */; };
 		E385999625ED61BA00838573 /* FavoriteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385999525ED61BA00838573 /* FavoriteStoreTests.swift */; };
-		E385999C25ED78FB00838573 /* PHPPhotoLibraryFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385999B25ED78FB00838573 /* PHPPhotoLibraryFacade.swift */; };
+		E385999C25ED78FB00838573 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E385999B25ED78FB00838573 /* PhotoLibrary.swift */; };
 		E38599A325ED80CD00838573 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38599A225ED80CD00838573 /* PhotoLibraryService.swift */; };
+		E38599F925EEC50900838573 /* UIDevice+isSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38599F825EEC50900838573 /* UIDevice+isSimulator.swift */; };
 		E3C85B8925E96F6A0038798C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C85B8825E96F6A0038798C /* Message.swift */; };
 		E3C85B9325E9D0760038798C /* DetailPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C85B9225E9D0760038798C /* DetailPhotoView.swift */; };
 		E3C85BA225E9DE700038798C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C85BA125E9DE700038798C /* FavoritesView.swift */; };
@@ -59,8 +60,9 @@
 		E319909A25E72B0D005D5C43 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E31990A725E7E8D7005D5C43 /* PhotoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 		E385999525ED61BA00838573 /* FavoriteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoreTests.swift; sourceTree = "<group>"; };
-		E385999B25ED78FB00838573 /* PHPPhotoLibraryFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPhotoLibraryFacade.swift; sourceTree = "<group>"; };
+		E385999B25ED78FB00838573 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
 		E38599A225ED80CD00838573 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		E38599F825EEC50900838573 /* UIDevice+isSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+isSimulator.swift"; sourceTree = "<group>"; };
 		E3C85B8825E96F6A0038798C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E3C85B9225E9D0760038798C /* DetailPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoView.swift; sourceTree = "<group>"; };
 		E3C85BA125E9DE700038798C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -225,7 +227,7 @@
 		E38599A025ED807400838573 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E385999B25ED78FB00838573 /* PHPPhotoLibraryFacade.swift */,
+				E385999B25ED78FB00838573 /* PhotoLibrary.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				E3CE6E1A25EADCE7009E7C18 /* PHAsset+withImageRequest.swift */,
+				E38599F825EEC50900838573 /* UIDevice+isSimulator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,7 +425,8 @@
 				E3CE6E2125EAE884009E7C18 /* FavoriteStore.swift in Sources */,
 				E38599A325ED80CD00838573 /* PhotoLibraryService.swift in Sources */,
 				E319909B25E72B0D005D5C43 /* ImagePicker.swift in Sources */,
-				E385999C25ED78FB00838573 /* PHPPhotoLibraryFacade.swift in Sources */,
+				E385999C25ED78FB00838573 /* PhotoLibrary.swift in Sources */,
+				E38599F925EEC50900838573 /* UIDevice+isSimulator.swift in Sources */,
 				E3CE6E1B25EADCE7009E7C18 /* PHAsset+withImageRequest.swift in Sources */,
 				E319906925E6EB96005D5C43 /* PhotoGridApp.swift in Sources */,
 				E3C85B8925E96F6A0038798C /* Message.swift in Sources */,
@@ -658,6 +662,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D IOS_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = lucas.PhotoGrid;
 				PRODUCT_NAME = PhotoGrid;
 				SDKROOT = iphoneos;
@@ -680,6 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = lucas.PhotoGrid;
 				PRODUCT_NAME = PhotoGrid;
 				SDKROOT = iphoneos;

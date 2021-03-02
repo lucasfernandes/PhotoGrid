@@ -18,6 +18,7 @@ class PhotoStore: ObservableObject {
     var allAssets: PHFetchResult<PHAsset>!
     var localImageIdentifiers = [String]()
     var lastSavedImage: UIImage?
+    var lastIdentifier: String?
     
     init(photoLibraryService: PhotoLibraryService) {
         self.photoLibraryService = photoLibraryService
@@ -50,13 +51,14 @@ extension PhotoStore {
             
             for asset in imagesToRequest {
                 self.photoLibraryService.requestImage(asset: asset) { image in
-                    self.photos.append(self.makePhoto(asset: asset, image: image))
+                    self.photos.append(self.makePhoto(identifier: asset.localIdentifier, image: image))
                 }
             }
         }
     }
     
-    func saveImage(image: UIImage) {
+    func saveImage(image: UIImage, identifier: String?) {
+        self.lastIdentifier = identifier
         self.photoLibraryService.saveImageToLibrary(image: image)
     }
     
@@ -64,9 +66,8 @@ extension PhotoStore {
         return self.photoLibraryService.lastAssetFromLibrary()
     }
     
-    func makePhoto(asset: PHAsset, image: UIImage) -> Photo {
-        let id = asset.localIdentifier
-        return Photo(id: id, image: image)
+    func makePhoto(identifier: String, image: UIImage) -> Photo {
+        return Photo(id: identifier, image: image)
     }
     
     func saveImageIdentifierToUserDefaults(identifier: String) {
@@ -103,16 +104,19 @@ extension PhotoStore {
     }
 }
 
-extension PhotoStore: PHPPhotoLibraryFacadeSave {
+extension PhotoStore: PhotoLibraryDelegate {
     func onAfterSaveImageToLibrary(image: UIImage?, error: Error?) {
         if error != nil {
             self.message = Message.generate(type: .error, action: .add)
             return
         }
-        
-        let lastAssetFromLibrary = getLatestAssetFromLibrary()
-        let photo = self.makePhoto(asset: lastAssetFromLibrary, image: image!)
-        self.saveImageIdentifierToUserDefaults(identifier: lastAssetFromLibrary.localIdentifier)
+
+        let identifier = UIDevice.current.isSimulator
+            ? lastIdentifier
+            : getLatestAssetFromLibrary().localIdentifier
+
+        let photo = self.makePhoto(identifier: identifier!, image: image!)
+        self.saveImageIdentifierToUserDefaults(identifier: identifier!)
         self.message = Message.generate(type: .success, action: .add)
         
         DispatchQueue.main.async {

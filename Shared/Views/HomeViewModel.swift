@@ -37,8 +37,9 @@ extension HomeView {
     
     func loadImage() {
         guard let image = inputImage else { return }
-        self.saveImage(image: image)
+        self.saveImage(image: image, identifier: inputIdentifier)
         inputImage = nil
+        inputIdentifier = nil
     }
     
     func takePhoto() {
@@ -46,8 +47,8 @@ extension HomeView {
         self.activeSheet = .second
     }
     
-    func saveImage(image: UIImage) {
-        self.photoStore.saveImage(image: image)
+    func saveImage(image: UIImage, identifier: String?) {
+        self.photoStore.saveImage(image: image, identifier: identifier)
     }
     
     func requestPermissions() {

@@ -43,8 +43,9 @@ struct DetailPhotoView: View {
                             .font(.title)
                             .foregroundColor(.primary)
                     }
-                    .padding(.top, 50)
+                    .padding(.top, 20)
                     .padding(.trailing, 20)
+                    .accessibility(identifier: "close")
                 }
                 
                 if showHeart! {
@@ -56,7 +57,9 @@ struct DetailPhotoView: View {
                             Image(systemName: favIcon)
                                 .font(.title)
                                 .foregroundColor(.pink)
-                        }.padding()
+                        }
+                        .padding()
+                        .accessibility(identifier: "favorite")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color(colorScheme == .dark ? .tertiarySystemBackground : .black))

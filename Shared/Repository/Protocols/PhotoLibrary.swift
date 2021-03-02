@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-protocol PHPPhotoLibraryFacade: NSObject {
+protocol PhotoLibrary: NSObject {
     func fetchAssets(identifiers: [String], completionHandler: @escaping (PHFetchResult<PHAsset>) -> Void)
     func lastAssetFromLibrary() -> PHAsset
     func requestImage(asset: PHAsset, completionHandler: @escaping (UIImage) -> Void)
@@ -18,6 +18,6 @@ protocol PHPPhotoLibraryFacade: NSObject {
 }
 
 
-protocol PHPPhotoLibraryFacadeSave {
+protocol PhotoLibraryDelegate: AnyObject {
     func onAfterSaveImageToLibrary(image: UIImage?, error: Error?)
 }

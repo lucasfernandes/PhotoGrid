@@ -8,8 +8,8 @@
 import UIKit
 import Photos
 
-class PhotoLibraryService: NSObject, PHPPhotoLibraryFacade {
-    var delegate: PHPPhotoLibraryFacadeSave?
+class PhotoLibraryService: NSObject, PhotoLibrary {
+    weak var delegate: PhotoLibraryDelegate?
     
     func fetchAssets(identifiers: [String], completionHandler: @escaping (PHFetchResult<PHAsset>) -> Void) {
         let fetchOptions = PHFetchOptions()
@@ -43,16 +43,21 @@ class PhotoLibraryService: NSObject, PHPPhotoLibraryFacade {
     }
     
     func deleteAsset(identifier: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
-        PHPhotoLibrary.shared().performChanges({
-            let imageAssetToDelete = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: nil)
-            PHAssetChangeRequest.deleteAssets(imageAssetToDelete)
-        }, completionHandler: {success, error in
-            if error != nil {
-                completionHandler(.failure(error!))
-            } else {
-                completionHandler(.success(success))
-            }
-        })
+        
+        if UIDevice.current.isSimulator {
+            completionHandler(.success(true))
+        } else {
+            PHPhotoLibrary.shared().performChanges({
+                let imageAssetToDelete = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: nil)
+                PHAssetChangeRequest.deleteAssets(imageAssetToDelete)
+            }, completionHandler: {success, error in
+                if error != nil {
+                    completionHandler(.failure(error!))
+                } else {
+                    completionHandler(.success(success))
+                }
+            })
+        }
     }
     
     func emptyAssetsArray() -> [PHAsset] {
@@ -60,7 +65,11 @@ class PhotoLibraryService: NSObject, PHPPhotoLibraryFacade {
     }
     
     func saveImageToLibrary(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.saveCallBack), nil)
+        if !UIDevice.current.isSimulator {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.saveCallBack), nil)
+        } else {
+            self.delegate?.onAfterSaveImageToLibrary(image: image, error: nil)
+        }
     }
     
     @objc func saveCallBack(_ image: UIImage,
