@@ -1,0 +1,60 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
+      
+  deploy-dev:
+    runs-on: macos-latest
+    environment: 
+      name: dev
+      url: ''
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: swift build -v
+      - name: Run tests
+        run: swift test -v
+        
+  deploy-hmg:
+    runs-on: macos-latest
+    environment: 
+      name: hmg
+      url: ''
+    needs: deploy-dev
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: swift build -v
+      - name: Run tests
+        run: swift test -v 
+        
+  deploy-prd:
+    runs-on: macos-latest
+    environment: 
+      name: prd
+      url: ''
+    needs: deploy-hmg
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: swift build -v
+      - name: Run tests
+        run: swift test -v
+    
+      
