@@ -1,4 +1,4 @@
-name: Swift   
+name: Swift
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+
     runs-on: macos-latest
 
     steps:
@@ -16,53 +17,28 @@ jobs:
       run: pwd && sudo xcode-select -switch /Applications/Xcode_12.4.app
     - name: Init Package
       run: Swift package init --type library
-    - name: Building
-      run: xcodebuild clean build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO            
-  
-  test:
-
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        destination: ["platform=iOS Simulator,name=iPhone 11 Pro,OS=latest"]
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Force Xcode 12
-      run: pwd && sudo xcode-select -switch /Applications/Xcode_12.4.app
-    - name: Init Package
-      run: Swift package init --type library
-    - name: Testing
+    - name: Build
       run: |
-        xcodebuild clean build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "${destination}" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
-        bash <(curl -s https://codecov.io/bash)
+        xcodebuild clean
+        xcodebuild build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO      
+    - name: Tests
+      run: |
+        xcodebuild clean
+        xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
       
-#   deploy-main:
-#     runs-on: macos-latest
-#     environment: 
-#       name: main
-#       url: ''
-#     needs: build
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Build
-#         run: |
-#           xcodebuild clean
-#           xcodebuild build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO      
-#       - name: Tests
-#         run: |
-#           xcodebuild clean
-#           xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
-        
-#   deploy-hmg:
-#     runs-on: macos-latest
-#     environment: 
-#       name: hmg
-#       url: ''
-#     needs: deploy-main
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Build
-#         run: swift build -v
-#       - name: Run tests
-#         run: swift test -v 
+  deploy-main
+    runs-on: macos-latest
+    environment: 
+      name: main
+      url: ''
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          xcodebuild clean
+          xcodebuild build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO      
+      - name: Tests
+        run: |
+          xcodebuild clean
+          xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
