@@ -14,9 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: swift build -v
+      run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination $DESTINATION -derivedDataPath $DERIVED_DATA_PATH build-for-testing
+#       run: swift build -v
     - name: Run tests
-      run: swift test -v
+      run: set -o pipefail && xcodebuild test-without-building -xctestrun $(find . -type f -name "*.xctestrun") -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES    
+#       run: swift test -v
       
   deploy-dev:
     runs-on: macos-latest
@@ -27,9 +29,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: swift build -v
+        run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination $DESTINATION -derivedDataPath $DERIVED_DATA_PATH build-for-testing
+#         run: swift build -v
       - name: Run tests
-        run: swift test -v
+        run: set -o pipefail && xcodebuild test-without-building -xctestrun $(find . -type f -name "*.xctestrun") -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES
+#         run: swift test -v
         
   deploy-hmg:
     runs-on: macos-latest
@@ -40,9 +44,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: swift build -v
+        run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination $DESTINATION -derivedDataPath $DERIVED_DATA_PATH build-for-testing
+#         run: swift build -v
       - name: Run tests
-        run: swift test -v 
+        run: set -o pipefail && xcodebuild test-without-building -xctestrun $(find . -type f -name "*.xctestrun") -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES      
+#         run: swift test -v 
         
   deploy-prd:
     runs-on: macos-latest
@@ -53,8 +59,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: swift build -v
+        run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination $DESTINATION -derivedDataPath $DERIVED_DATA_PATH build-for-testing
+#         run: swift build -v
       - name: Run tests
-        run: swift test -v
+        run: set -o pipefail && xcodebuild test-without-building -xctestrun $(find . -type f -name "*.xctestrun") -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES      
+#         run: swift test -v
     
       
