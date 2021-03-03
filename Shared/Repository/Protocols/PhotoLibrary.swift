@@ -17,7 +17,6 @@ protocol PhotoLibrary: NSObject {
     func saveImageToLibrary(image: UIImage)
 }
 
-
 protocol PhotoLibraryDelegate: AnyObject {
     func onAfterSaveImageToLibrary(image: UIImage?, error: Error?)
 }

@@ -13,8 +13,8 @@ enum MessageType {
 }
 
 enum MessageActionType: String {
-    case add = "added"
-    case delete = "deleted"
+    case added = "added"
+    case deleted = "deleted"
 }
 
 struct Message: Identifiable {

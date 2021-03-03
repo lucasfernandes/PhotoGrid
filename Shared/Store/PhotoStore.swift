@@ -43,7 +43,7 @@ extension PhotoStore {
             var imagesToRequest = self.photoLibraryService.emptyAssetsArray()
             guard let results = self.allAssets, results.count > 0 else { return }
             
-            results.enumerateObjects { object, index, stop in
+            results.enumerateObjects { object, _, _ in
                 if self.localImageIdentifiers.contains(object.localIdentifier) {
                     imagesToRequest.append(object)
                 }
@@ -88,7 +88,7 @@ extension PhotoStore {
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
-                self.message = Message.generate(type: .error, action: .delete)
+                self.message = Message.generate(type: .error, action: .deleted)
             case .success(let isSuccess):
                 if isSuccess {
                     self.localImageIdentifiers.removeAll(where: { $0 == id })
@@ -96,7 +96,7 @@ extension PhotoStore {
                     
                     DispatchQueue.main.async {
                         self.photos.removeAll(where: { $0.id == id })
-                        self.message = Message.generate(type: .success, action: .delete)
+                        self.message = Message.generate(type: .success, action: .deleted)
                     }
                 }
             }
@@ -107,7 +107,7 @@ extension PhotoStore {
 extension PhotoStore: PhotoLibraryDelegate {
     func onAfterSaveImageToLibrary(image: UIImage?, error: Error?) {
         if error != nil {
-            self.message = Message.generate(type: .error, action: .add)
+            self.message = Message.generate(type: .error, action: .added)
             return
         }
 
@@ -121,7 +121,7 @@ extension PhotoStore: PhotoLibraryDelegate {
 
         let photo = self.makePhoto(identifier: identifier!, image: image!)
         self.saveImageIdentifierToUserDefaults(identifier: identifier!)
-        self.message = Message.generate(type: .success, action: .add)
+        self.message = Message.generate(type: .success, action: .added)
         
         DispatchQueue.main.async {
             self.photos.append(photo)

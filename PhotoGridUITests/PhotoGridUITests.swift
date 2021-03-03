@@ -57,7 +57,6 @@ class PhotoGridUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["favoritesCount"].label, "1")
     }
     
-    
     func testShouldRemoveLastPhotoAdded() {
         givePermissions()
 

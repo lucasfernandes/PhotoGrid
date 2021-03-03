@@ -58,7 +58,7 @@ class FavoriteStoreTests: XCTestCase {
         XCTAssertTrue(favoriteStore.favorites.count == 1)
         
         favoriteStore.delete(id: photo.id)
-        XCTAssertTrue(favoriteStore.favorites.count == 0)
+        XCTAssertTrue(favoriteStore.favorites.isEmpty)
     }
     
     func testWhenToogleOffAPhotoAsFavorite() {
@@ -72,7 +72,7 @@ class FavoriteStoreTests: XCTestCase {
         photo.favorite = false
         favoriteStore.save(photo: photo)
         
-        XCTAssertTrue(favoriteStore.favorites.count == 0)
+        XCTAssertTrue(favoriteStore.favorites.isEmpty)
     }
 
 }

@@ -47,8 +47,8 @@ extension FavoriteStore {
         
         self.favorites = photos.filter { self.favoriteIdentifiers.contains($0.id) }
         
-        for fav in favorites {
-            fav.favorite.toggle()
+        for item in favorites {
+            item.favorite.toggle()
         }
     }
     
@@ -58,4 +58,3 @@ extension FavoriteStore {
         self.saveToDefaults()
     }
 }
-

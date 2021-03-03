@@ -24,13 +24,13 @@ struct HomeView: View {
     let columns = [
         GridItem(.flexible(minimum: 40), spacing: 1),
         GridItem(.flexible(minimum: 40), spacing: 1),
-        GridItem(.flexible(minimum: 40), spacing: 1),
+        GridItem(.flexible(minimum: 40), spacing: 1)
     ]
     
     var body: some View {
         NavigationView {
             ScrollView {
-                if photoStore.photos.count > 0 {
+                if !photoStore.photos.isEmpty {
                     DetailsHeaderView()
                         .environmentObject(photoStore)
                         .environmentObject(favoriteStore)
@@ -59,7 +59,7 @@ struct HomeView: View {
                     }
                     .accessibility(identifier: "grid")
 
-                    if photoStore.photos.count == 0 {
+                    if photoStore.photos.isEmpty {
                         VStack {
                             Text("Add a new photo to your PhotoGrid!")
                                 .font(.headline)
@@ -115,4 +115,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-

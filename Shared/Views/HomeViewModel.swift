@@ -52,26 +52,26 @@ extension HomeView {
     }
     
     func requestPermissions() {
-        //Camera
+        // Camera
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
-                //access granted
+                // access granted
             } else {
                 DispatchQueue.main.async {
                     let alert = UIAlertController()
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }))
                 }
             }
         }
         
-        //Photos
+        // Photos
         let photos = PHPhotoLibrary.authorizationStatus()
         if photos == .notDetermined {
             PHPhotoLibrary.requestAuthorization({status in
                 if status == .authorized {
-                    //access granted
+                    // access granted
                 } else {
                     DispatchQueue.main.async {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
