@@ -12,6 +12,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Force Xcode 12
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
     - name: Build
