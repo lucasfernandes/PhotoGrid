@@ -20,7 +20,7 @@ jobs:
     - name: Run Clean and Tests
       run: |
         xcodebuild clean
-        xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination 'platform=iOS Simulator,name=iPhone 11' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
+        xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
 #     - name: Build
 #       run: swift build -v
 #     - name: Run tests
