@@ -14,10 +14,10 @@ jobs:
     steps:
     - name: Force Xcode 12
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
-    - name: Build App
-      run: xcodebuild -project PhotoGrid.xcodeproj -scheme PhotoGrid -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO      
+    - name: Build
+      run: swift build -v
     - name: Run tests
-      run: xcodebuild clean test -project PhotoGrid.xcodeproj -scheme PhotoGrid -destination "platform=iOS Simulator,name=iPhone 11,OS=latest"
+      run: swift test -v
 
 #     - uses: actions/checkout@v2
 #     - name: Build
