@@ -437,7 +437,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcrun simctl boot ${TARGET_DEVICE_IDENTIFIER}\nxcrun simctl uninstall ${TARGET_DEVICE_IDENTIFIER} lucas.PhotoGrid\n";
+			shellScript = "
+";
 		};
 		E3EB8E5825EFD6540038C1E4 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
