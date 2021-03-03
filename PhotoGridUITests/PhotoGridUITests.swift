@@ -27,6 +27,7 @@ class PhotoGridUITests: XCTestCase {
     
     func addNewPhoto() {
         app.buttons["add"].tap()
+        sleep(5)
         app.buttons["Photos"].tap()
         app.images.element(boundBy: 3).tap()
     }
@@ -46,6 +47,7 @@ class PhotoGridUITests: XCTestCase {
     func testShouldMarkAPhotoAsFavoriteAndSeeOnHome() {
         givePermissions()
 
+        sleep(5)
         let image = app.otherElements["grid"].images.firstMatch
         image.tap()
         
@@ -60,6 +62,7 @@ class PhotoGridUITests: XCTestCase {
     func testShouldRemoveLastPhotoAdded() {
         givePermissions()
 
+        sleep(5)
         let image = app.otherElements["grid"].images.firstMatch
         image.press(forDuration: 1)
 
