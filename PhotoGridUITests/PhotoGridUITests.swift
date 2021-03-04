@@ -8,6 +8,7 @@
 import XCTest
 
 class PhotoGridUITests: XCTestCase {
+    
     private var app: XCUIApplication!
     let alertDescription = "“PhotoGrid” Would Like to Access Your Photos"
     
