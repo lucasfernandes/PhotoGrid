@@ -1,16 +1,15 @@
 name: Swift
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Force Xcode 12
@@ -31,8 +30,15 @@ jobs:
     runs-on: macos-latest
     environment: 
       name: main
-      url: ''
+      url: 'google.com'
     needs: build
+    steps:
+      - name: Some script
+        run: echo Deploy Main
+    
+    
+    
+    
     steps:
       - uses: actions/checkout@v2
       - name: Build
