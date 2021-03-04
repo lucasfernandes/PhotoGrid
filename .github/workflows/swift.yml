@@ -26,7 +26,8 @@ jobs:
         xcodebuild clean
         xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
       
-  deploy-main
+      
+  deploy-main:
     runs-on: macos-latest
     environment: 
       name: main
