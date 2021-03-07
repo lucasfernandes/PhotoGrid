@@ -12,12 +12,11 @@ import Photos
 class PhotoStoreTests: XCTestCase {
     
     var photoStore: PhotoStore!
-    var photoLibraryService: PhotoLibraryService!
+    var photoLibrary: PhotoLibrary!
     
     override func setUp() {
-        photoLibraryService = PhotoLibraryService()
-        photoStore = PhotoStore(photoLibraryService: photoLibraryService)
-        photoLibraryService.delegate = photoStore
+        photoLibrary = PhotoLibrary()
+        photoStore = PhotoStore(photoLibrary: photoLibrary)
     }
 
     func testMakePhoto() {

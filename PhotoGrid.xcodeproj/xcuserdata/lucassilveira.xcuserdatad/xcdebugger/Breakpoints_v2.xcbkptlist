@@ -400,7 +400,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "saveImage(image:identifier:)"
+            landmarkName = "getAllPhotos()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,9 +446,9 @@
             filePath = "Shared/Store/PhotoStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "onAfterSaveImageToLibrary(image:error:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "deletePhoto(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -462,10 +462,10 @@
             filePath = "Shared/Store/PhotoStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "onAfterSaveImageToLibrary(image:error:)"
-            landmarkType = "7">
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "PhotoStore"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

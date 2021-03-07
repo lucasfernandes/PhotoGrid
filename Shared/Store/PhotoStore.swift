@@ -18,7 +18,7 @@ class PhotoStore: ObservableObject {
     var allAssets: PHFetchResult<PHAsset>!
     var localImageIdentifiers = [String]()
     var lastSavedImage: UIImage?
-    @State var lastIdentifier: String?
+    var lastIdentifier: String?
     
     init(photoLibrary: PhotoLibraryProtocol) {
         self.photoLibrary = photoLibrary
@@ -63,7 +63,10 @@ extension PhotoStore {
     }
     
     func saveImage(image: UIImage, identifier: String?) {
-        self.lastIdentifier = identifier
+        if let identifier = identifier {
+            self.lastIdentifier = identifier
+        }
+        
         self.photoLibrary.saveImageToLibrary(image: image)
     }
     
