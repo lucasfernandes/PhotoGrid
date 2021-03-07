@@ -9,7 +9,7 @@ import UIKit
 import Photos
 
 extension PHAsset {
-    var image: UIImage {
+    var image: UIImage { 
         var thumbnail = UIImage()
         let imageManager = PHCachingImageManager()
         

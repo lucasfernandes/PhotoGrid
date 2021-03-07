@@ -8,9 +8,7 @@
 import UIKit
 import Photos
 
-class PhotoLibraryService: NSObject, PhotoLibrary {
-    weak var delegate: PhotoLibraryDelegate?
-    
+class PhotoLibrary: NSObject, PhotoLibraryProtocol {
     func fetchAssets(identifiers: [String], completionHandler: @escaping (PHFetchResult<PHAsset>) -> Void) {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate",
@@ -68,7 +66,7 @@ class PhotoLibraryService: NSObject, PhotoLibrary {
         if !UIDevice.current.isSimulator {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.saveCallBack), nil)
         } else {
-            self.delegate?.onAfterSaveImageToLibrary(image: image, error: nil)
+            self.addNotificationForSavedImage(image: image, error: nil)
         }
     }
     
@@ -76,6 +74,15 @@ class PhotoLibraryService: NSObject, PhotoLibrary {
                             didFinishSavingWithError error: Error?,
                             contextInfo: UnsafeRawPointer) {
         
-        self.delegate?.onAfterSaveImageToLibrary(image: image, error: error)
+        self.addNotificationForSavedImage(image: image, error: error)
+    }
+    
+    func addNotificationForSavedImage(image: UIImage, error: Error?) {
+        let userInfo: [String: Any] = ["image": image, "error": error as Any]
+        NotificationCenter.default.post(
+            name: Notification.Name("ImageSaved"),
+            object: nil,
+            userInfo: userInfo
+        )
     }
 }

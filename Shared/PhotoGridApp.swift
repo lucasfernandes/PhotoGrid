@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct PhotoGridApp: App {
-    var photoStore = PhotoStore(photoLibraryService: PhotoLibraryService())
+    var photoStore = PhotoStore(photoLibrary: PhotoLibrary())
     var favoriteStore = FavoriteStore()
     
     var body: some Scene {
