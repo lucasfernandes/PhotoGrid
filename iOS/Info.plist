@@ -38,7 +38,9 @@
 		<key>UIColorName</key>
 		<string>launchScreenBackground</string>
 		<key>UIImageName</key>
-		<string>launchScreenImage</string>
+		<string>launchScreen</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

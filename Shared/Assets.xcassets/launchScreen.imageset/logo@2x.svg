@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="184px" height="184px" viewBox="0 0 184 184" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>logo@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="6.69403076%" y1="72.757103%" x2="77.6648407%" y2="20.2694817%" id="linearGradient-1">
+            <stop stop-color="#EF2EB5" offset="0%"></stop>
+            <stop stop-color="#A7F9FE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(12.000000, 12.000000)">
+            <circle id="Oval" stroke="#FFFFFF" stroke-width="24" cx="80" cy="80" r="80"></circle>
+            <circle id="Oval" fill="url(#linearGradient-1)" cx="80" cy="80" r="80"></circle>
+            <path d="M17.6423632,104.673639 C14.6458756,97.0636833 13,88.7740491 13,80.1 C13,43.0416933 43.0416933,13 80.1,13 C85.6623345,13 91.0665912,13.6768111 96.2349101,14.952573 C51.8563317,24.5374021 18.9800441,57.1018004 17.6423632,104.673639 Z" id="Combined-Shape" fill="#FFFFFF" style="mix-blend-mode: overlay;"></path>
+        </g>
+    </g>
+</svg>
