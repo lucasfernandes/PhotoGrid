@@ -1,6 +1,6 @@
 //
 //  PhotoLibraryService.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 01/03/21.
 //

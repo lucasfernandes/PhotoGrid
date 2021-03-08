@@ -1,0 +1,14 @@
+sourceryCommand: null
+sourceryTemplate: null
+PhotoGridTests:
+  sources:
+    include:
+    - ./Shared
+  output: ./PhotoGridTests/Mock.generated.swift
+  targets:
+  - PhotoGridTests
+  testable:
+  - PhotoGrid
+  import:
+  - Photos
+  - UIKit

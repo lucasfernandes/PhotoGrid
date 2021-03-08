@@ -1,6 +1,6 @@
 //
 //  PhotoStore.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 25/02/21.
 //

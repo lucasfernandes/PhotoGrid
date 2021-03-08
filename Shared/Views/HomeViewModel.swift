@@ -1,6 +1,6 @@
 //
 //  HomeViewModel.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 27/02/21.
 //

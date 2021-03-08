@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CHANGELOG  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="CHANGELOG  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">SwiftyMocky 4.0.1 Docs</a> (85% documented)</p>
+        <p class="header-right"><a href="https://github.com/MakeAWishFoundation/SwiftyMocky"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">SwiftyMocky Reference</a>
+        <img id="carat" src="img/carat.png" />
+        CHANGELOG  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Main%20Guides.html">Main Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="overview.html">Overview</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="setup-in-project.html">Setup in project</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="mockfile.html">Mockfile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="command-line-interface.html">Command Line Interface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="supported-features.html">Supported features</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="prototyping.html">Prototyping</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Additional%20Guides.html">Additional Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="matcher-support-for-not-equatable.html">Matcher support for not Equatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="handling-generics.html">Handling Generics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="examples.html">Examples</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="legacy.html">Legacy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="add-xcode-generate-action.html">Add XCode generate action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="known-issues.html">Known issues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="changelog.html">CHANGELOG</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Global%20methods.html">Global methods</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky5Givenyyx_ABQzAA14StubbingPolicyOtAA4MockRzlF">Given(_:_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky5Givenyyxm_06StaticC0QzAA14StubbingPolicyOtAA0D4MockRzlF">Given(_:_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky7Performyyx_ABQztAA4MockRzlF">Perform(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky7Performyyxm_06StaticC0QztAA0D4MockRzlF">Perform(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky6Verify__4file4lineyx_ABQzs12StaticStringVSutAA4MockRzlF">Verify(_:_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky6Verify__4file4lineyxm_06StaticC0Qzs0F6StringVSutAA0F4MockRzlF">Verify(_:_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky6Verify___4file4lineyx_AA5CountOABQzs12StaticStringVSutAA4MockRzlF">Verify(_:_:_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global%20methods.html#/s:11SwiftyMocky6Verify___4file4lineyxm_AA5CountO06StaticC0Qzs0G6StringVSutAA0G4MockRzlF">Verify(_:_:_:file:line:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Configuration.html">Configuration</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/StubbingPolicy.html">StubbingPolicy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SequencingPolicy.html">SequencingPolicy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Types.html">Types</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Mock.html">Mock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StaticMock.html">StaticMock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Parameter.html">Parameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Matcher.html">Matcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Matcher/ComparisonResult.html">– ComparisonResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Matcher/ParameterComparisonResult.html">– ParameterComparisonResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Countable.html">Countable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Count.html">Count</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stubber.html">Stubber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StubberThrows.html">StubberThrows</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Generics.html">Generics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/GenericAttribute.html">GenericAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/GenericAttributeType.html">GenericAttributeType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Helpers.html">Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Helpers.html#/s:11SwiftyMocky20XCTAssertThrowsError_2of_4file4lineyxyKXK_q_mSSyXKs12StaticStringVSuts0E0R_r0_lF">XCTAssertThrowsError(_:of:_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Helpers.html#/s:11SwiftyMocky20XCTAssertThrowsError_5error_4file4lineyxyKXK_q_SSyXKs12StaticStringVSutSQR_s0E0R_r0_lF">XCTAssertThrowsError(_:error:_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MockyAssertion.html">MockyAssertion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Internal.html">Internal</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/SwiftyMockyTestObserver.html">SwiftyMockyTestObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FatalErrorUtil.html">FatalErrorUtil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/OptionalType.html">OptionalType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WithSequencingPolicy.html">WithSequencingPolicy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WithStaticSequencingPolicy.html">WithStaticSequencingPolicy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WithStubbingPolicy.html">WithStubbingPolicy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Optional.html">Optional</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UInt.html">UInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/MockError.html">MockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StubProduct.html">StubProduct</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/StubbedMethod.html">StubbedMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Internal.html#/s:11SwiftyMocky7Failureys5NeverOSSF">Failure(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Internal.html#/s:11SwiftyMocky0B6Assert__4file4lineySbyXK_SSyXKs12StaticStringVSutF">MockyAssert(_:_:file:line:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other%20Guides.html">Other Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="contents.html">Contents</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other%20Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ArgumentCaptor.html">ArgumentCaptor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other%20Enums.html">Other Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/MockScope.html">MockScope</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Utils.html">Utils</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='changelog' class='heading'>Changelog</h1>
+
+<p>All changes to SwiftyMocky project will be documented in this file.</p>
+
+<hr>
+<h2 id='strong-4-0-1-strong-2020' class='heading'><strong>4.0.1</strong> / 2020</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Fixed issues with access modifiers for properties</li>
+</ul>
+
+<hr>
+<h2 id='strong-4-0-0-strong-2020' class='heading'><strong>4.0.0</strong> / 2020</h2>
+<h3 id='important' class='heading'>Important:</h3>
+
+<ul>
+<li><strong>CLI</strong> is extracted to separate repo</li>
+</ul>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>SwiftyPrototype is now separat library, so it is now possible to use SwiftyMocky to both test &amp; prototype (fake) app.</li>
+<li>Support for methods with variadic parameters</li>
+<li>Support for <code>@available</code> and <code>@objc</code> annotations</li>
+<li>Refined assertion messages</li>
+<li>Made it easier to ship generated mocks with project, allowing to use them by 3rd party</li>
+<li>Resolved problem with ambiguity for generic methods that throws</li>
+<li>Matcher issues should be more prominent and easier trackable</li>
+<li>Matcher should fail test instead of crashing whenever possible</li>
+<li>Verify now have better failure messages, including best matching invocations</li>
+<li><code>typealias</code> annotation to workaround problems with multiple types from different modules sharing same name.</li>
+</ul>
+<h4 id='deprecated' class='heading'>Deprecated:</h4>
+
+<ul>
+<li>all methods and properties marked previously as deprecated are now removed.</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Mock generation for protocols with internal types (@truebucha)</li>
+<li>Pinned CLI dependencies (@ohitsdaniel)</li>
+<li>Added missing tvOS and macOS support for carthage</li>
+</ul>
+<h2 id='strong-3-4-0-strong-2019' class='heading'><strong>3.4.0</strong> / 2019</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>New typealias <q>annotation</q>, allowing to fix common issues with generic protocols and ambigious class names</li>
+<li>A <q>sourcery</q> section to mockfile, to specify additional sourcery configurations to execute during generation</li>
+<li><code>resetMock(...)</code> methods to reset mock internals</li>
+<li>New tests suite for Xcode 11.2 (Swift 5.2)</li>
+</ul>
+<h4 id='deprecated' class='heading'>Deprecated:</h4>
+
+<ul>
+<li>deprecated <code>clear()</code> method on <code><a href="Protocols/StaticMock.html">StaticMock</a></code> in favour of <code>resetMock(...)</code></li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Fixed Parameter ExpressibleByArrayLiteral init, by @chuckluck44 (Charley Luckhardt)</li>
+<li>Fixed Xcode 11 support by @glyuck (Vladimir Lyukov)</li>
+<li>Fixed typos in Readme, by @iliaskarim and @mikeakers (Mike Akers)</li>
+<li>Fixed tests for swift 5.0 and linux tests</li>
+</ul>
+<h2 id='strong-3-3-4-strong-2019' class='heading'><strong>3.3.4</strong> / 2019</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Fixed problem with not printable ASCI characters by @timedelta (Bryan Nova)</li>
+<li>Fixed problem with missing generic constraints by @demalex (Alex Demishkevych)</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-3-3-strong-2019' class='heading'><strong>3.3.3</strong> / 2019</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Swift 5.0 issue with custom assertions not compiling</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-3-2-strong-2019' class='heading'><strong>3.3.2</strong> / 2019</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Fixed problems with multiple mocks being part of same target by @davidmtamas</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-3-1-strong-2019' class='heading'><strong>3.3.1</strong> / 2019</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Removed leftover swift version setting to 5.0 from SwiftyPrototype target, causing problems for Carthage setup</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-3-0-strong-2019' class='heading'><strong>3.3.0</strong> / 2019</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Added SwiftyMocky CLI, simplifying setup and providing <code>doctor</code> feature</li>
+<li>Added support for Swift Package Manager (SPM)</li>
+<li>New configuration file for working with multiple targets - <code><a href="mockfile.html">Mockfile</a></code></li>
+<li>Fixed redundant constraints for methods with stripped generics (@tarbayev)</li>
+<li>Added Argument captor by @timedelta (Bryan Nova)</li>
+</ul>
+<h4 id='removed' class='heading'>Removed:</h4>
+
+<ul>
+<li>dropped Swift 4.0, SwiftyMocky now requires Swift 4.1+</li>
+<li>dropped MockyCustom subspec, new subspec is Prototyping, for Carthage SwiftyPrototype</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-2-0-strong-2019' class='heading'><strong>3.2.0</strong> / 2019</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Fixed issues with naming, as internal name <code>Product</code> tend to conflict with Mocked classes</li>
+<li>Swift 5.0 support, fixes for optional types casting</li>
+<li>Integrated Sourcery 0.16.0, fixed issues resulting in breaking with newest Sourcery</li>
+</ul>
+<h4 id='removed' class='heading'>Removed:</h4>
+
+<ul>
+<li><strong>No more support for Swift 3.x</strong></li>
+<li>All Given methods, that were marked as <code>deprecated</code> in SwiftyMocky 3.x, are now __unavailable)).</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-1-0-strong-2019' class='heading'><strong>3.1.0</strong> / 2019</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Convenience <code><a href="Enums/Count.html#/s:11SwiftyMocky5CountO4onceyA2CmF">Count.once</a></code> as syntactic sugar for <code>1</code> for <code>Verify</code></li>
+<li>Proper integration with projects that already use Sourcery (@laxmorek)</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Fixed generating mocks for methods that are throwing, and returning Self in the same time</li>
+<li>Fixed associated types protocols generation, when methods generic constrained</li>
+</ul>
+
+<hr>
+<h2 id='strong-3-0-0-strong-2018' class='heading'><strong>3.0.0</strong> / 2018</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Gracefully fail when return value is not stubbed</li>
+<li>Support for subscripts</li>
+<li>Stubbing policy, and support for recording sequence of return values</li>
+<li>Sequencing policy, which allows to change order in which stubs are processed</li>
+<li>Given for properties</li>
+</ul>
+<h4 id='deprecated' class='heading'>Deprecated:</h4>
+
+<ul>
+<li>deprecated VerifyProperty</li>
+<li>deprecated setters for readonly properties</li>
+<li>deprecated Given constructors not matching method signature (argument labels fix)</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>multiple generation issues, like unnamed method parameters and esaping paramters names</li>
+<li>fixed issues with generics handling, when some attributes was not recognized as genric</li>
+<li>fixed issues with names collisions for methods different only in argument labels</li>
+</ul>
+
+<hr>
+<h2 id='strong-2-1-0-strong-2018' class='heading'><strong>2.1.0</strong> / 2018</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>handling @escaping when converting to Any (XCode10)</li>
+<li>minor improvements for XCode10 and Swift 4.2</li>
+<li>updated documentation</li>
+</ul>
+
+<hr>
+<h2 id='strong-2-0-1-strong-2018' class='heading'><strong>2.0.1</strong> / 2018</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>methods generation when differ only in return types</li>
+<li>moved lint rules to top (Lammert Westerhoff)</li>
+<li>updated minimal iOS deployment version (Igor Bulaya)</li>
+</ul>
+
+<hr>
+<h2 id='strong-2-0-0-strong-2018' class='heading'><strong>2.0.0</strong> / 2018</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Support <code>Verify</code> for properties</li>
+<li><code><a href="Enums/Count.html">Count</a></code> object, for easier specification of expected <code>Verify</code> results</li>
+<li><code><a href="Enums/Parameter.html">Parameter</a></code> case <code>.matching</code>, allowing to specify custom rules for matching</li>
+<li>Exclude sources documentation</li>
+<li>Protocol &lsquo;inheritance&rsquo; test</li>
+<li>Support for <code>Self</code> requirements</li>
+<li>Dropped <code>XCTest</code> dependency</li>
+<li>Additional <code>Custom</code> subspec, for non XCTest depending cases</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>handling <code>T.Type</code> generic parameters</li>
+</ul>
+
+<hr>
+<h2 id='strong-1-0-2-strong-2017' class='heading'><strong>1.0.2</strong> / 2017</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Code of contribution</li>
+<li>Code of conduct</li>
+<li>Default Matcher cases for basic types</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Handling of different Swift versions, checked on:
+
+<ul>
+<li>Swift 3.1 Xcode 8.3 and Xcode 8.3.3</li>
+<li>Swift 3.2 Xcode 9</li>
+<li>Swift 4.0.x Xcode 9</li>
+</ul></li>
+<li>Fixed links for cocoapods.org expanded site</li>
+</ul>
+
+<hr>
+<h2 id='strong-1-0-1-strong-2017' class='heading'><strong>1.0.1</strong> / 2017</h2>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Missing Parameter case for ValueType both Sequence and Equatable, causing compile error under Swift 3.x in XCode 9</li>
+<li>Images not showing in expanded description on cocoapods.org</li>
+<li>Documentation link based on tag, not commit</li>
+</ul>
+
+<hr>
+<h2 id='strong-1-0-0-strong-2017' class='heading'><strong>1.0.0</strong> / 2017</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>Support for generics</li>
+<li>Support for static members</li>
+<li>Different Swift versions support</li>
+<li>Matcher convenience registrations</li>
+<li>More extensive documentation</li>
+</ul>
+<h4 id='updated' class='heading'>Updated:</h4>
+
+<ul>
+<li>Simplified Mock template</li>
+<li>Generated code simplified and beautified</li>
+<li>Renamed &hellip;Proxy to <code>Given</code>,<code>Verify</code>,<code>Perform</code></li>
+<li>Reduced generation time</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed:</h4>
+
+<ul>
+<li>Comparing parameters</li>
+<li>Matcher comparing issues</li>
+</ul>
+
+<hr>
+<h2 id='strong-0-9-0-strong-2017' class='heading'><strong>0.9.0</strong> / 2017</h2>
+<h4 id='added' class='heading'>Added:</h4>
+
+<ul>
+<li>basic generation flow</li>
+<li>basic documentation</li>
+<li>readme</li>
+<li>template</li>
+<li>basic swift 3.1 support</li>
+</ul>
+<h4 id='updated' class='heading'>Updated:</h4>
+
+<ul>
+<li>Wrapping methods into <code>Proxy</code></li>
+<li>Example tests</li>
+</ul>
+
+<hr>
+<h2 id='0-1-0-0-4-0-2017' class='heading'>0.1.0 - 0.4.0 / 2017</h2>
+
+<ul>
+<li>Initial commit</li>
+<li>Foundation of <strong>SwiftyMocky</strong> project</li>
+<li>Tests and CI setup</li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright © 2017 MakeAWishFoundation. All rights reserved.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

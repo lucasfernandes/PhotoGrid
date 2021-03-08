@@ -7,15 +7,16 @@
 
 import XCTest
 import Photos
+import SwiftyMocky
 @testable import PhotoGrid
 
 class PhotoStoreTests: XCTestCase {
     
     var photoStore: PhotoStore!
-    var photoLibrary: PhotoLibrary!
+    var photoLibrary: PhotoLibraryProtocolMock!
     
     override func setUp() {
-        photoLibrary = PhotoLibrary()
+        photoLibrary = PhotoLibraryProtocolMock()
         photoStore = PhotoStore(photoLibrary: photoLibrary)
     }
 

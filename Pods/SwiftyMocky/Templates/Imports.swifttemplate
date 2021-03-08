@@ -1,0 +1,10 @@
+<%# ================================================== IMPORTS -%><%_ -%>
+    <%_ for projectImport in projectImports(argument) { -%>
+        <%_ %><%= projectImport %>
+    <%_ } -%>
+    <%# ============================ IMPORTS InAPP (aggregated argument) -%><%_ -%>
+    <%_ if let swiftyMockyArgs = argument["swiftyMocky"] as? [String: Any] { -%>
+        <%_ for projectImport in projectImports(swiftyMockyArgs) { -%>
+            <%_ %><%= projectImport %>
+        <%_ } -%>
+    <%_ } -%>

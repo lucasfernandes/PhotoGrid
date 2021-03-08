@@ -11,6 +11,7 @@ excluded:
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib
+- PhotoGridTests/Mock.generated.swift
 line_length:
     warning: 150
     error: 200
