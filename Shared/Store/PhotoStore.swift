@@ -8,7 +8,19 @@
 import SwiftUI
 import Photos
 
-class PhotoStore: ObservableObject {
+//sourcery: AutoMockable
+protocol PhotoStoreProtocol: ObservableObject {
+    func getAllPhotos()
+    func saveImage(image: UIImage, identifier: String?)
+    func getLatestAssetFromLibrary() -> PHAsset
+    func makePhoto(identifier: String, image: UIImage) -> Photo
+    func saveImageIdentifierToUserDefaults(identifier: String)
+    func getImageIdentifiersFromUserDefaults()
+    func deletePhoto(id: String)
+}
+
+class PhotoStore: PhotoStoreProtocol {
+    
     let photoLibrary: PhotoLibraryProtocol
     
     @Published var photos = [Photo]()
@@ -17,18 +29,10 @@ class PhotoStore: ObservableObject {
     
     var allAssets: PHFetchResult<PHAsset>!
     var localImageIdentifiers = [String]()
-    var lastSavedImage: UIImage?
-    var lastIdentifier: String?
     
     init(photoLibrary: PhotoLibraryProtocol) {
         self.photoLibrary = photoLibrary
         self.getAllPhotos()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(onAfterSaveImageToLibrary(_:)),
-            name: Notification.Name("ImageSaved"),
-            object: nil)
     }
 }
 
@@ -44,7 +48,7 @@ extension PhotoStore {
             self.photoLibrary.fetchAssets(identifiers: self.localImageIdentifiers) { assets in
                 self.allAssets = assets
             }
-
+            
             var imagesToRequest = self.photoLibrary.emptyAssetsArray()
             guard let results = self.allAssets, results.count > 0 else { return }
             
@@ -63,11 +67,27 @@ extension PhotoStore {
     }
     
     func saveImage(image: UIImage, identifier: String?) {
-        if let identifier = identifier {
-            self.lastIdentifier = identifier
+        self.photoLibrary.saveImageToLibrary(image: image) { result in
+            switch result {
+            case .failure:
+                print("error")
+            case .success(let image):
+                let lastIdentifier = UIDevice.current.isSimulator && identifier != nil
+                    ? identifier
+                    : self.getLatestAssetFromLibrary().localIdentifier
+                
+                if self.localImageIdentifiers.contains(lastIdentifier ?? "") {
+                    return
+                }
+                
+                let photo = self.makePhoto(identifier: lastIdentifier!, image: image)
+                self.saveImageIdentifierToUserDefaults(identifier: lastIdentifier!)
+                DispatchQueue.main.async {
+                    self.message = Message.generate(type: .success, action: .added)
+                    self.photos.append(photo)
+                }
+            }
         }
-        
-        self.photoLibrary.saveImageToLibrary(image: image)
     }
     
     func getLatestAssetFromLibrary() -> PHAsset {
@@ -107,31 +127,6 @@ extension PhotoStore {
                         self.message = Message.generate(type: .success, action: .deleted)
                     }
                 }
-            }
-        }
-    }
-    
-    @objc func onAfterSaveImageToLibrary(_ notification: Notification) {
-        if notification.userInfo?["error"] as? Error != nil {
-            self.message = Message.generate(type: .error, action: .added)
-            return
-        }
-
-        if let image = notification.userInfo?["image"] as? UIImage {
-            let identifier = UIDevice.current.isSimulator
-                ? lastIdentifier
-                : getLatestAssetFromLibrary().localIdentifier
-            
-            if self.localImageIdentifiers.contains(identifier!) {
-                return
-            }
-            
-            let photo = self.makePhoto(identifier: identifier!, image: image)
-            self.saveImageIdentifierToUserDefaults(identifier: identifier!)
-            self.message = Message.generate(type: .success, action: .added)
-            
-            DispatchQueue.main.async {
-                self.photos.append(photo)
             }
         }
     }

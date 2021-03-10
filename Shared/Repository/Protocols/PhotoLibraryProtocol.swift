@@ -8,13 +8,12 @@
 import UIKit
 import Photos
 
-//sourcery: AutoMockable 
+//sourcery: AutoMockable
 protocol PhotoLibraryProtocol: NSObject {
     func fetchAssets(identifiers: [String], completionHandler: @escaping (PHFetchResult<PHAsset>) -> Void)
     func lastAssetFromLibrary() -> PHAsset
     func requestImage(asset: PHAsset, completionHandler: @escaping (UIImage) -> Void)
     func deleteAsset(identifier: String, completionHandler: @escaping (Result<Bool, Error>) -> Void)
     func emptyAssetsArray() -> [PHAsset]
-    func saveImageToLibrary(image: UIImage)
-    func addNotificationForSavedImage(image: UIImage, error: Error?)
+    func saveImageToLibrary(image: UIImage, completionHandler: @escaping (Result<UIImage, Error>) -> Void)
 }
