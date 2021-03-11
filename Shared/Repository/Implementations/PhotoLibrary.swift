@@ -63,6 +63,11 @@ class PhotoLibrary: NSObject, PhotoLibraryProtocol {
     }
     
     func saveImageToLibrary(image: UIImage, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
+        if UIDevice.current.isSimulator {
+            completionHandler(.success(image))
+            return
+        }
+        
         PHPhotoLibrary.shared().performChanges {
             PHAssetChangeRequest.creationRequestForAsset(from: image)
         } completionHandler: { (_, error) in
@@ -74,28 +79,4 @@ class PhotoLibrary: NSObject, PhotoLibraryProtocol {
             completionHandler(.success(image))
         }
     }
-    
-//    func saveImageToLibrary(image: UIImage) {
-//        if !UIDevice.current.isSimulator {
-//            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.saveCallBack), nil)
-//        } else {
-//            self.addNotificationForSavedImage(image: image, error: nil)
-//        }
-//    }
-//
-//    @objc func saveCallBack(_ image: UIImage,
-//                            didFinishSavingWithError error: Error?,
-//                            contextInfo: UnsafeRawPointer) {
-//
-//        self.addNotificationForSavedImage(image: image, error: error)
-//    }
-//
-//    func addNotificationForSavedImage(image: UIImage, error: Error?) {
-//        let userInfo: [String: Any] = ["image": image, "error": error as Any]
-//        NotificationCenter.default.post(
-//            name: Notification.Name("ImageSaved"),
-//            object: nil,
-//            userInfo: userInfo
-//        )
-//    }
 }

@@ -53,7 +53,7 @@ class PhotoStoreTests: XCTestCase {
         Perform(photoLibrary, .saveImageToLibrary(
                     image: .any,
                     completionHandler: .any,
-                    perform: { (image, completionHandler) in
+                    perform: { (_, completionHandler) in
                         completionHandler(.failure(URLError(.unknown)))
                     }))
         
