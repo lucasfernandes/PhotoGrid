@@ -1,15 +1,27 @@
 //
 //  PhotoStore.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 25/02/21.
 //
 
-import UIKit
+import SwiftUI
 import Photos
 
-class PhotoStore: ObservableObject {
-    let photoLibraryService: PhotoLibraryService
+//sourcery: AutoMockable
+protocol PhotoStoreProtocol: ObservableObject {
+    func getAllPhotos()
+    func saveImage(image: UIImage, identifier: String?)
+    func getLatestAssetFromLibrary() -> PHAsset
+    func makePhoto(identifier: String, image: UIImage) -> Photo
+    func saveImageIdentifierToUserDefaults(identifier: String)
+    func getImageIdentifiersFromUserDefaults()
+    func deletePhoto(id: String)
+}
+
+class PhotoStore: PhotoStoreProtocol {
+    
+    let photoLibrary: PhotoLibraryProtocol
     
     @Published var photos = [Photo]()
     @Published var message: Message?
@@ -17,12 +29,9 @@ class PhotoStore: ObservableObject {
     
     var allAssets: PHFetchResult<PHAsset>!
     var localImageIdentifiers = [String]()
-    var lastSavedImage: UIImage?
-    var lastIdentifier: String?
     
-    init(photoLibraryService: PhotoLibraryService) {
-        self.photoLibraryService = photoLibraryService
-        self.photoLibraryService.delegate = self
+    init(photoLibrary: PhotoLibraryProtocol) {
+        self.photoLibrary = photoLibrary
         self.getAllPhotos()
     }
 }
@@ -36,11 +45,11 @@ extension PhotoStore {
             fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate",
                                                              ascending: true)]
             
-            self.photoLibraryService.fetchAssets(identifiers: self.localImageIdentifiers) { assets in
+            self.photoLibrary.fetchAssets(identifiers: self.localImageIdentifiers) { assets in
                 self.allAssets = assets
             }
-
-            var imagesToRequest = self.photoLibraryService.emptyAssetsArray()
+            
+            var imagesToRequest = self.photoLibrary.emptyAssetsArray()
             guard let results = self.allAssets, results.count > 0 else { return }
             
             results.enumerateObjects { object, _, _ in
@@ -50,7 +59,7 @@ extension PhotoStore {
             }
             
             for asset in imagesToRequest {
-                self.photoLibraryService.requestImage(asset: asset) { image in
+                self.photoLibrary.requestImage(asset: asset) { image in
                     self.photos.append(self.makePhoto(identifier: asset.localIdentifier, image: image))
                 }
             }
@@ -58,12 +67,31 @@ extension PhotoStore {
     }
     
     func saveImage(image: UIImage, identifier: String?) {
-        self.lastIdentifier = identifier
-        self.photoLibraryService.saveImageToLibrary(image: image)
+        self.photoLibrary.saveImageToLibrary(image: image) { result in
+            switch result {
+            case .failure:
+                print("error")
+            case .success(let image):
+                let lastIdentifier = UIDevice.current.isSimulator && identifier != nil
+                    ? identifier
+                    : self.getLatestAssetFromLibrary().localIdentifier
+                
+                if self.localImageIdentifiers.contains(lastIdentifier ?? "") {
+                    return
+                }
+                
+                let photo = self.makePhoto(identifier: lastIdentifier!, image: image)
+                self.saveImageIdentifierToUserDefaults(identifier: lastIdentifier!)
+                DispatchQueue.main.async {
+                    self.message = Message.generate(type: .success, action: .added)
+                    self.photos.append(photo)
+                }
+            }
+        }
     }
     
     func getLatestAssetFromLibrary() -> PHAsset {
-        return self.photoLibraryService.lastAssetFromLibrary()
+        return self.photoLibrary.lastAssetFromLibrary()
     }
     
     func makePhoto(identifier: String, image: UIImage) -> Photo {
@@ -84,7 +112,7 @@ extension PhotoStore {
     }
     
     func deletePhoto(id: String) {
-        self.photoLibraryService.deleteAsset(identifier: id) { result in
+        self.photoLibrary.deleteAsset(identifier: id) { result in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
@@ -101,32 +129,5 @@ extension PhotoStore {
                 }
             }
         }
-    }
-}
-
-extension PhotoStore: PhotoLibraryDelegate {
-    func onAfterSaveImageToLibrary(image: UIImage?, error: Error?) {
-        if error != nil {
-            self.message = Message.generate(type: .error, action: .added)
-            return
-        }
-
-        let identifier = UIDevice.current.isSimulator
-            ? lastIdentifier
-            : getLatestAssetFromLibrary().localIdentifier
-        
-        if self.localImageIdentifiers.contains(identifier!) {
-            return
-        }
-
-        let photo = self.makePhoto(identifier: identifier!, image: image!)
-        self.saveImageIdentifierToUserDefaults(identifier: identifier!)
-        self.message = Message.generate(type: .success, action: .added)
-        
-        DispatchQueue.main.async {
-            self.photos.append(photo)
-        }
-        
-        // TODO: callback after save to show success message
     }
 }

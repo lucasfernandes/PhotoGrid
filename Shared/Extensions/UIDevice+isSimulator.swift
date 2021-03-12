@@ -1,6 +1,6 @@
 //
 //  UIDevice+isSimulator.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 02/03/21.
 //

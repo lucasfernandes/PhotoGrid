@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		4D8229B0397AE8C2F7C11B3F9EFC9362 /* Sourcery */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8C0FA8664472892B08200EA125A01D5C /* Build configuration list for PBXAggregateTarget "Sourcery" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Sourcery;
+			productName = Sourcery;
+		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
@@ -20,49 +30,207 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		497A27E5B1630EB6F843BEAEC9303F8A /* Pods-PhotoGrid (iOS)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E7A86A1F42DDFF8E372DA5660CED60 /* Pods-PhotoGrid (iOS)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87597D98EF65FD5A00C4BCCDAA501AF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A82A5755E570CE3A1BC4A335978F4227 /* Pods-PhotoGrid (iOS)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C07CA72A86B20B6CB2BB22A6B8701152 /* Pods-PhotoGrid (iOS)-dummy.m */; };
+		180A43314830D6D48092ED79ADC3F664 /* Stubbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB60C11B07BCCB735EDBAF251897E1 /* Stubbing.swift */; };
+		26F5DECB6A85090D070C01C38433EFF4 /* SwiftyMocky-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBE77E330E6122FF0BA88D83F07F839 /* SwiftyMocky-dummy.m */; };
+		2E47A62335C5377BF86F74B9554802F1 /* SwiftyMocky-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 702F7871626D78D5BF33803358C63EA9 /* SwiftyMocky-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3A279683BA3B88D2A710B5DDC97244A9 /* CustomAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9EBF50DF85460AA158DCDDA5895EC /* CustomAssertions.swift */; };
+		3FF572C372EDE61D2E6DD0380D1F04E0 /* ArgumentCaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3386EE653EE8CBAA8AE2826040B387 /* ArgumentCaptor.swift */; };
+		4299FCBF91C37EE50D5C7CD000A0E69A /* Pods-PhotoGrid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD6956EE542204838DB257327EE750E /* Pods-PhotoGrid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		522ECFB70004E628139C85F44B4E25DF /* Pods-PhotoGridTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9580271607B920A534C39B22816526D /* Pods-PhotoGridTests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5DF58CEF510DB311F7E1DEB65A744697 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4080CE40B4286F16FBF84A5F485367 /* Utils.swift */; };
+		5FAB9E918F7A7EB750919075567343A3 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FFD907FA2C413BE5BA19AE50FD430 /* Count.swift */; };
+		65D5E1908FD72B75380914D347589141 /* Parameter+Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B79BEA5D95B6195530852AE322F1357 /* Parameter+Literals.swift */; };
+		81F235DC6ACBCC72552036052F9FE305 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		88988152A5D26AC6BA522D943AB38A54 /* Mock+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B43598AC0FEE4ED1D1202273E2774 /* Mock+Assertions.swift */; };
+		97C94B79ACDA484FD962597240004F73 /* SwiftyMockyTestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619E65953AD18FAF3FDA1EA50C59909 /* SwiftyMockyTestObserver.swift */; };
+		9CB1A0CEFF409D780C4632458DB10C85 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975048D90077A7425602E37A539E7AF /* Parameter.swift */; };
+		9DC234B2A49033C4635BAA71A3EA5361 /* Pods-PhotoGrid-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA0F7A63B74358E97A932526B08519 /* Pods-PhotoGrid-dummy.m */; };
+		AFBF2EF1E4122F518C86704738D236CE /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F17F71D213E23E46970AFA9D8CFC8B /* Mock.swift */; };
+		B33F3975D8EDA297562AC3C1E63C833C /* Countable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23308DD3D74BCCF7317C8395F8D2774A /* Countable.swift */; };
+		B86737D83BB17B733FA51CE3FD9F74B1 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D1750E0F0639B6D24CB37C1F8434F5 /* Matcher.swift */; };
+		C341424D2DC4E88A99A9A14223F4782D /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EF6543890428CA5E82AEE7CA28511B /* Policies.swift */; };
+		CD0BE36956530AF193799A591E87C063 /* Pods-PhotoGridTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 331645781595442BC611727E46063047 /* Pods-PhotoGridTests-dummy.m */; };
+		EA69D99CAF97A10C6239E80E08A3FE1F /* GenericAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758CB92752FCDCF9A1F091DE533A8F8B /* GenericAttribute.swift */; };
+		F84848EF117E2E2814965C0AB235A22C /* MockyAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25285DA4ABD67537814D025555CA31D0 /* MockyAssert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8A955A6ED87F6CCD539522F6063EDE84 /* PBXContainerItemProxy */ = {
+		2A480448DE32D09E2C4569E596581C29 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
+		622E508A3AEAE1A8916D201EB0D7C353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E1D382CC4BD286E42005EFFC61B9445;
+			remoteInfo = SwiftyMocky;
+		};
+		634AEF051C06DF089CF855A7E3AC3C5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D8229B0397AE8C2F7C11B3F9EFC9362;
+			remoteInfo = Sourcery;
+		};
+		71DD8323F183EAEED4252BCF9053C4B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D8229B0397AE8C2F7C11B3F9EFC9362;
+			remoteInfo = Sourcery;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22A1E9EA5A6A186A17126B4E53C91C27 /* Pods-PhotoGrid (iOS)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhotoGrid (iOS)-acknowledgements.plist"; sourceTree = "<group>"; };
-		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		02EF6543890428CA5E82AEE7CA28511B /* Policies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Policies.swift; path = Sources/SwiftyMocky/Policies.swift; sourceTree = "<group>"; };
+		0619E65953AD18FAF3FDA1EA50C59909 /* SwiftyMockyTestObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyMockyTestObserver.swift; path = Sources/SwiftyMocky/SwiftyMockyTestObserver.swift; sourceTree = "<group>"; };
+		0ED0D41B0BBD5D20794E25A4BECC07DE /* Pods-PhotoGridTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGridTests.release.xcconfig"; sourceTree = "<group>"; };
+		10C9EBF50DF85460AA158DCDDA5895EC /* CustomAssertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAssertions.swift; path = Sources/SwiftyMocky/CustomAssertions.swift; sourceTree = "<group>"; };
+		1B79BEA5D95B6195530852AE322F1357 /* Parameter+Literals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Parameter+Literals.swift"; path = "Sources/SwiftyMocky/Parameter+Literals.swift"; sourceTree = "<group>"; };
+		1EBE77E330E6122FF0BA88D83F07F839 /* SwiftyMocky-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyMocky-dummy.m"; sourceTree = "<group>"; };
+		23308DD3D74BCCF7317C8395F8D2774A /* Countable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Countable.swift; path = Sources/SwiftyMocky/Countable.swift; sourceTree = "<group>"; };
+		25285DA4ABD67537814D025555CA31D0 /* MockyAssert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockyAssert.swift; path = Sources/SwiftyMocky/MockyAssert.swift; sourceTree = "<group>"; };
+		287FFD907FA2C413BE5BA19AE50FD430 /* Count.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Count.swift; path = Sources/SwiftyMocky/Count.swift; sourceTree = "<group>"; };
+		2FA90929D3E98EF24A4AFF935FD031AD /* SwiftyMocky-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyMocky-prefix.pch"; sourceTree = "<group>"; };
+		328C520656723DBC17FAD98538880928 /* libPods-PhotoGridTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoGridTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		331645781595442BC611727E46063047 /* Pods-PhotoGridTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PhotoGridTests-dummy.m"; sourceTree = "<group>"; };
+		400563086EB8AAA1D27A496A57707542 /* Pods-PhotoGridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGridTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A4080CE40B4286F16FBF84A5F485367 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/SwiftyMocky/Utils.swift; sourceTree = "<group>"; };
+		4A4F58A39C92BB4A6DC5290951ED241B /* Pods_PhotoGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C377D5E2BFA337752A35E282FFDB475 /* Pods-PhotoGridTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PhotoGridTests.modulemap"; sourceTree = "<group>"; };
+		4E3386EE653EE8CBAA8AE2826040B387 /* ArgumentCaptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArgumentCaptor.swift; path = Sources/SwiftyMocky/ArgumentCaptor.swift; sourceTree = "<group>"; };
+		53F17F71D213E23E46970AFA9D8CFC8B /* Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mock.swift; path = Sources/SwiftyMocky/Mock.swift; sourceTree = "<group>"; };
+		583E736F64C9FAD428C1E2C3CE06938D /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		5A84915191C042E32025E8EF67A5ED93 /* Pods-PhotoGridTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PhotoGridTests-resources.sh"; sourceTree = "<group>"; };
+		696F36C96B8632C6D3CB50F6C117518F /* Pods-PhotoGrid-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PhotoGrid-acknowledgements.markdown"; sourceTree = "<group>"; };
+		702F7871626D78D5BF33803358C63EA9 /* SwiftyMocky-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyMocky-umbrella.h"; sourceTree = "<group>"; };
+		72615FC066DDBC891E253D6EC4AC9663 /* Sourcery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sourcery.debug.xcconfig; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		811EBCB3856AE9490CC08E930F8E8823 /* Pods-PhotoGrid (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGrid (iOS).release.xcconfig"; sourceTree = "<group>"; };
-		8190831D1ED3B5586A43FC2AAF8A781E /* Pods-PhotoGrid (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGrid (iOS).debug.xcconfig"; sourceTree = "<group>"; };
-		93E7A86A1F42DDFF8E372DA5660CED60 /* Pods-PhotoGrid (iOS)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PhotoGrid (iOS)-umbrella.h"; sourceTree = "<group>"; };
-		9BF5574EA2558697D9879696B7BB4645 /* Pods-PhotoGrid (iOS)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PhotoGrid (iOS)-acknowledgements.markdown"; sourceTree = "<group>"; };
+		758CB92752FCDCF9A1F091DE533A8F8B /* GenericAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericAttribute.swift; path = Sources/SwiftyMocky/GenericAttribute.swift; sourceTree = "<group>"; };
+		7FD6956EE542204838DB257327EE750E /* Pods-PhotoGrid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PhotoGrid-umbrella.h"; sourceTree = "<group>"; };
+		81EB60C11B07BCCB735EDBAF251897E1 /* Stubbing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stubbing.swift; path = Sources/SwiftyMocky/Stubbing.swift; sourceTree = "<group>"; };
+		87F2109C4DF9F1F6E67E7729E63F0761 /* Mock.swifttemplate */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Mock.swifttemplate; path = Sources/SwiftyMocky/Mock.swifttemplate; sourceTree = "<group>"; };
+		8E8A453600CB5B93900BD49B46BED985 /* Pods-PhotoGrid-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhotoGrid-Info.plist"; sourceTree = "<group>"; };
+		94098C3F6BC651A5721AC1CF71E32FFE /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		9551AEDDC9D0C84FD8E7714A183CC49A /* get_sourcery.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = get_sourcery.sh; sourceTree = "<group>"; };
+		9963C01F46D344B7D45B931B21DD31D5 /* Pods-PhotoGrid-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhotoGrid-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C07CA72A86B20B6CB2BB22A6B8701152 /* Pods-PhotoGrid (iOS)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PhotoGrid (iOS)-dummy.m"; sourceTree = "<group>"; };
-		C48A13D7D320C2ED02196CDDA9ADEC03 /* Pods_PhotoGrid__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGrid__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD2A02B288FE4D3F4FB3C694D899E93 /* Pods-PhotoGrid (iOS).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PhotoGrid (iOS).modulemap"; sourceTree = "<group>"; };
-		E3EE6A39D23D212FB2ACD55017232571 /* Pods-PhotoGrid (iOS)-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhotoGrid (iOS)-Info.plist"; sourceTree = "<group>"; };
+		9DCDE078F4935E24A5694CADFB751444 /* Pods-PhotoGrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PhotoGrid.modulemap"; sourceTree = "<group>"; };
+		A2369F060022ACBE55329B71C0D39DDE /* SwiftyMocky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyMocky.debug.xcconfig; sourceTree = "<group>"; };
+		A743758EAD656F9AE60F6B3041360F1B /* libSwiftyMocky.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwiftyMocky.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79508B70A58F64FFFF2CD2B494AADCF /* Pods-PhotoGridTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhotoGridTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A97E226E3B075EE52451832EBA4A7E88 /* SwiftyMocky.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyMocky.modulemap; sourceTree = "<group>"; };
+		B8AA0F7A63B74358E97A932526B08519 /* Pods-PhotoGrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PhotoGrid-dummy.m"; sourceTree = "<group>"; };
+		BF7ABB86E8A3114CFE0DA15B30B87F0E /* Pods-PhotoGridTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PhotoGridTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BF9528C359DEDDAD995921E8A6628A2D /* Sourcery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sourcery.release.xcconfig; sourceTree = "<group>"; };
+		C012DECDD769C405B27DCF31D4435493 /* Pods-PhotoGrid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGrid.release.xcconfig"; sourceTree = "<group>"; };
+		C9580271607B920A534C39B22816526D /* Pods-PhotoGridTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PhotoGridTests-umbrella.h"; sourceTree = "<group>"; };
+		CA6B43598AC0FEE4ED1D1202273E2774 /* Mock+Assertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Mock+Assertions.swift"; path = "Sources/SwiftyMocky/Mock+Assertions.swift"; sourceTree = "<group>"; };
+		D975048D90077A7425602E37A539E7AF /* Parameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = Sources/SwiftyMocky/Parameter.swift; sourceTree = "<group>"; };
+		DFF33D8D46C4FCB7E5CFB1F80142355A /* Pods-PhotoGrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PhotoGrid.debug.xcconfig"; sourceTree = "<group>"; };
+		E2A577A005F34E2DA501F8E010261876 /* SwiftyMocky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyMocky.release.xcconfig; sourceTree = "<group>"; };
+		F0D1750E0F0639B6D24CB37C1F8434F5 /* Matcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matcher.swift; path = Sources/SwiftyMocky/Matcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E27ECE4D71D8F0BEB6E225316A1EB724 /* Frameworks */ = {
+		102AEA711722EE0704F6212ECF6C6239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87597D98EF65FD5A00C4BCCDAA501AF5 /* Foundation.framework in Frameworks */,
+				81F235DC6ACBCC72552036052F9FE305 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7E31500FDCF7AA7AE4B3FBECC8D389 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C8C12053F9B37A4A74BE49FB7F06556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2555B531EDCAB473042925B39E86D195 /* SwiftyMocky */ = {
+			isa = PBXGroup;
+			children = (
+				4E3386EE653EE8CBAA8AE2826040B387 /* ArgumentCaptor.swift */,
+				287FFD907FA2C413BE5BA19AE50FD430 /* Count.swift */,
+				23308DD3D74BCCF7317C8395F8D2774A /* Countable.swift */,
+				10C9EBF50DF85460AA158DCDDA5895EC /* CustomAssertions.swift */,
+				758CB92752FCDCF9A1F091DE533A8F8B /* GenericAttribute.swift */,
+				F0D1750E0F0639B6D24CB37C1F8434F5 /* Matcher.swift */,
+				53F17F71D213E23E46970AFA9D8CFC8B /* Mock.swift */,
+				CA6B43598AC0FEE4ED1D1202273E2774 /* Mock+Assertions.swift */,
+				25285DA4ABD67537814D025555CA31D0 /* MockyAssert.swift */,
+				D975048D90077A7425602E37A539E7AF /* Parameter.swift */,
+				1B79BEA5D95B6195530852AE322F1357 /* Parameter+Literals.swift */,
+				02EF6543890428CA5E82AEE7CA28511B /* Policies.swift */,
+				81EB60C11B07BCCB735EDBAF251897E1 /* Stubbing.swift */,
+				0619E65953AD18FAF3FDA1EA50C59909 /* SwiftyMockyTestObserver.swift */,
+				4A4080CE40B4286F16FBF84A5F485367 /* Utils.swift */,
+				4383CB08FA01C80AE7CC716A8709974C /* Resources */,
+				EA1DC21CE724711800A34E05590DF4A0 /* Support Files */,
+			);
+			path = SwiftyMocky;
+			sourceTree = "<group>";
+		};
+		2678D54193CFE30ABE7CAD674CE5576D /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				328C97E21E1CC081852DA5213D0927BF /* Support Files */,
+			);
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		2D204146FEBB454EC3F9CFD879DFAAB3 /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				3B7F28ACD8EB63C9DBC1F64BBB3EB12B /* Support Files */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		328C97E21E1CC081852DA5213D0927BF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94098C3F6BC651A5721AC1CF71E32FFE /* SwiftLint.debug.xcconfig */,
+				583E736F64C9FAD428C1E2C3CE06938D /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		3B7F28ACD8EB63C9DBC1F64BBB3EB12B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				72615FC066DDBC891E253D6EC4AC9663 /* Sourcery.debug.xcconfig */,
+				BF9528C359DEDDAD995921E8A6628A2D /* Sourcery.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Sourcery";
+			sourceTree = "<group>";
+		};
+		4383CB08FA01C80AE7CC716A8709974C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9551AEDDC9D0C84FD8E7714A183CC49A /* get_sourcery.sh */,
+				87F2109C4DF9F1F6E67E7729E63F0761 /* Mock.swifttemplate */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,44 +239,37 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+		70E54F35AD24E6E44954749F201C6279 /* Pods-PhotoGridTests */ = {
 			isa = PBXGroup;
 			children = (
-				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
-				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+				4C377D5E2BFA337752A35E282FFDB475 /* Pods-PhotoGridTests.modulemap */,
+				BF7ABB86E8A3114CFE0DA15B30B87F0E /* Pods-PhotoGridTests-acknowledgements.markdown */,
+				A79508B70A58F64FFFF2CD2B494AADCF /* Pods-PhotoGridTests-acknowledgements.plist */,
+				331645781595442BC611727E46063047 /* Pods-PhotoGridTests-dummy.m */,
+				5A84915191C042E32025E8EF67A5ED93 /* Pods-PhotoGridTests-resources.sh */,
+				C9580271607B920A534C39B22816526D /* Pods-PhotoGridTests-umbrella.h */,
+				400563086EB8AAA1D27A496A57707542 /* Pods-PhotoGridTests.debug.xcconfig */,
+				0ED0D41B0BBD5D20794E25A4BECC07DE /* Pods-PhotoGridTests.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftLint";
+			name = "Pods-PhotoGridTests";
+			path = "Target Support Files/Pods-PhotoGridTests";
 			sourceTree = "<group>";
 		};
-		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+		7918165AF707F3289991B863E069713D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+				2D204146FEBB454EC3F9CFD879DFAAB3 /* Sourcery */,
+				2678D54193CFE30ABE7CAD674CE5576D /* SwiftLint */,
+				2555B531EDCAB473042925B39E86D195 /* SwiftyMocky */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9DBB7ADFD4B12A22FCF29E1650F2CFF4 /* Pods-PhotoGrid (iOS) */ = {
+		A00ECCC6B3B06A8141BD502EB98AA375 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DAD2A02B288FE4D3F4FB3C694D899E93 /* Pods-PhotoGrid (iOS).modulemap */,
-				9BF5574EA2558697D9879696B7BB4645 /* Pods-PhotoGrid (iOS)-acknowledgements.markdown */,
-				22A1E9EA5A6A186A17126B4E53C91C27 /* Pods-PhotoGrid (iOS)-acknowledgements.plist */,
-				C07CA72A86B20B6CB2BB22A6B8701152 /* Pods-PhotoGrid (iOS)-dummy.m */,
-				E3EE6A39D23D212FB2ACD55017232571 /* Pods-PhotoGrid (iOS)-Info.plist */,
-				93E7A86A1F42DDFF8E372DA5660CED60 /* Pods-PhotoGrid (iOS)-umbrella.h */,
-				8190831D1ED3B5586A43FC2AAF8A781E /* Pods-PhotoGrid (iOS).debug.xcconfig */,
-				811EBCB3856AE9490CC08E930F8E8823 /* Pods-PhotoGrid (iOS).release.xcconfig */,
-			);
-			name = "Pods-PhotoGrid (iOS)";
-			path = "Target Support Files/Pods-PhotoGrid (iOS)";
-			sourceTree = "<group>";
-		};
-		A7F48470B48F726974F956B8A382650B /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9DBB7ADFD4B12A22FCF29E1650F2CFF4 /* Pods-PhotoGrid (iOS) */,
+				E06D177F75BF23398D918F2A6E61333B /* Pods-PhotoGrid */,
+				70E54F35AD24E6E44954749F201C6279 /* Pods-PhotoGridTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -118,9 +279,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				965877409E01FB3D85D85E90E6B30185 /* Pods */,
-				E0A1C9112CCC947D212EEE5BD370F60C /* Products */,
-				A7F48470B48F726974F956B8A382650B /* Targets Support Files */,
+				7918165AF707F3289991B863E069713D /* Pods */,
+				E09F8BDBBA15C745BA94B2910C8AAB11 /* Products */,
+				A00ECCC6B3B06A8141BD502EB98AA375 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,53 +293,131 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+		E06D177F75BF23398D918F2A6E61333B /* Pods-PhotoGrid */ = {
 			isa = PBXGroup;
 			children = (
-				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+				9DCDE078F4935E24A5694CADFB751444 /* Pods-PhotoGrid.modulemap */,
+				696F36C96B8632C6D3CB50F6C117518F /* Pods-PhotoGrid-acknowledgements.markdown */,
+				9963C01F46D344B7D45B931B21DD31D5 /* Pods-PhotoGrid-acknowledgements.plist */,
+				B8AA0F7A63B74358E97A932526B08519 /* Pods-PhotoGrid-dummy.m */,
+				8E8A453600CB5B93900BD49B46BED985 /* Pods-PhotoGrid-Info.plist */,
+				7FD6956EE542204838DB257327EE750E /* Pods-PhotoGrid-umbrella.h */,
+				DFF33D8D46C4FCB7E5CFB1F80142355A /* Pods-PhotoGrid.debug.xcconfig */,
+				C012DECDD769C405B27DCF31D4435493 /* Pods-PhotoGrid.release.xcconfig */,
 			);
-			path = SwiftLint;
+			name = "Pods-PhotoGrid";
+			path = "Target Support Files/Pods-PhotoGrid";
 			sourceTree = "<group>";
 		};
-		E0A1C9112CCC947D212EEE5BD370F60C /* Products */ = {
+		E09F8BDBBA15C745BA94B2910C8AAB11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C48A13D7D320C2ED02196CDDA9ADEC03 /* Pods_PhotoGrid__iOS_.framework */,
+				328C520656723DBC17FAD98538880928 /* libPods-PhotoGridTests.a */,
+				A743758EAD656F9AE60F6B3041360F1B /* libSwiftyMocky.a */,
+				4A4F58A39C92BB4A6DC5290951ED241B /* Pods_PhotoGrid.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EA1DC21CE724711800A34E05590DF4A0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97E226E3B075EE52451832EBA4A7E88 /* SwiftyMocky.modulemap */,
+				1EBE77E330E6122FF0BA88D83F07F839 /* SwiftyMocky-dummy.m */,
+				2FA90929D3E98EF24A4AFF935FD031AD /* SwiftyMocky-prefix.pch */,
+				702F7871626D78D5BF33803358C63EA9 /* SwiftyMocky-umbrella.h */,
+				A2369F060022ACBE55329B71C0D39DDE /* SwiftyMocky.debug.xcconfig */,
+				E2A577A005F34E2DA501F8E010261876 /* SwiftyMocky.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyMocky";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FF5A263DB7BE6A7DDA57E015632EB190 /* Headers */ = {
+		2A6BBA96024085E4673C5E624ACE1478 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497A27E5B1630EB6F843BEAEC9303F8A /* Pods-PhotoGrid (iOS)-umbrella.h in Headers */,
+				522ECFB70004E628139C85F44B4E25DF /* Pods-PhotoGridTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EADE95B0FD937EB364AC9C1951DAC14 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4299FCBF91C37EE50D5C7CD000A0E69A /* Pods-PhotoGrid-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2F0DE672FA249A1F270A7E6C7CB360A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E47A62335C5377BF86F74B9554802F1 /* SwiftyMocky-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4DC169A76150803017BABA65344DCBA1 /* Pods-PhotoGrid (iOS) */ = {
+		336B37A277EFD1A95D192860ECC60ECB /* Pods-PhotoGridTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9675C54C0FFBAA1357C07D4905F483A2 /* Build configuration list for PBXNativeTarget "Pods-PhotoGrid (iOS)" */;
+			buildConfigurationList = 94B2DFA7DC44F1345DBD9FC57D35EFB4 /* Build configuration list for PBXNativeTarget "Pods-PhotoGridTests" */;
 			buildPhases = (
-				FF5A263DB7BE6A7DDA57E015632EB190 /* Headers */,
-				FDF0327CACF9D68DEAC3BCCED1145E7E /* Sources */,
-				E27ECE4D71D8F0BEB6E225316A1EB724 /* Frameworks */,
-				22EE21AC12D896854888CECC391AA46F /* Resources */,
+				2A6BBA96024085E4673C5E624ACE1478 /* Headers */,
+				69A9ECC78F749C39B41BF4A7A22B8AAA /* Sources */,
+				7C8C12053F9B37A4A74BE49FB7F06556 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C94538B1117C2CF622E65597FCDD083D /* PBXTargetDependency */,
+				0D3CD212467565F10BC9703E51949407 /* PBXTargetDependency */,
+				E1B6510AC0CB461CE2A9D5A15ABC36E7 /* PBXTargetDependency */,
 			);
-			name = "Pods-PhotoGrid (iOS)";
-			productName = "Pods-PhotoGrid (iOS)";
-			productReference = C48A13D7D320C2ED02196CDDA9ADEC03 /* Pods_PhotoGrid__iOS_.framework */;
+			name = "Pods-PhotoGridTests";
+			productName = "Pods-PhotoGridTests";
+			productReference = 328C520656723DBC17FAD98538880928 /* libPods-PhotoGridTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4E1D382CC4BD286E42005EFFC61B9445 /* SwiftyMocky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3E17ADB75EABFC750649B1AC913C6AD /* Build configuration list for PBXNativeTarget "SwiftyMocky" */;
+			buildPhases = (
+				A2F0DE672FA249A1F270A7E6C7CB360A /* Headers */,
+				624112FF1909D087E81F6BB7170C9810 /* Sources */,
+				3A7E31500FDCF7AA7AE4B3FBECC8D389 /* Frameworks */,
+				44ACBCE3692DE7758B465D78228831A0 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA376A6E8971821AB0C2CF55C5919F46 /* PBXTargetDependency */,
+			);
+			name = SwiftyMocky;
+			productName = SwiftyMocky;
+			productReference = A743758EAD656F9AE60F6B3041360F1B /* libSwiftyMocky.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DFAE89CF735ECB30E13BBF6A23F55F20 /* Pods-PhotoGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 668C37B385A672F1FA4DF527C3416C49 /* Build configuration list for PBXNativeTarget "Pods-PhotoGrid" */;
+			buildPhases = (
+				8EADE95B0FD937EB364AC9C1951DAC14 /* Headers */,
+				15F231F3EC5F8A392EB7B22E3BD6E462 /* Sources */,
+				102AEA711722EE0704F6212ECF6C6239 /* Frameworks */,
+				5C99221372E5F85F319EEA82CBEA4621 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9C216030ADDB6A2A2F26E759482E37F /* PBXTargetDependency */,
+			);
+			name = "Pods-PhotoGrid";
+			productName = "Pods-PhotoGrid";
+			productReference = 4A4F58A39C92BB4A6DC5290951ED241B /* Pods_PhotoGrid.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -199,18 +438,21 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E0A1C9112CCC947D212EEE5BD370F60C /* Products */;
+			productRefGroup = E09F8BDBBA15C745BA94B2910C8AAB11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DC169A76150803017BABA65344DCBA1 /* Pods-PhotoGrid (iOS) */,
+				DFAE89CF735ECB30E13BBF6A23F55F20 /* Pods-PhotoGrid */,
+				336B37A277EFD1A95D192860ECC60ECB /* Pods-PhotoGridTests */,
+				4D8229B0397AE8C2F7C11B3F9EFC9362 /* Sourcery */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+				4E1D382CC4BD286E42005EFFC61B9445 /* SwiftyMocky */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		22EE21AC12D896854888CECC391AA46F /* Resources */ = {
+		5C99221372E5F85F319EEA82CBEA4621 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,27 +461,184 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44ACBCE3692DE7758B465D78228831A0 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SwiftyMocky/SwiftyMocky.modulemap",
+				"${PODS_ROOT}/Headers/Public/SwiftyMocky/SwiftyMocky-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SwiftyMocky-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyMocky/SwiftyMocky.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyMocky/SwiftyMocky-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		FDF0327CACF9D68DEAC3BCCED1145E7E /* Sources */ = {
+		15F231F3EC5F8A392EB7B22E3BD6E462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82A5755E570CE3A1BC4A335978F4227 /* Pods-PhotoGrid (iOS)-dummy.m in Sources */,
+				9DC234B2A49033C4635BAA71A3EA5361 /* Pods-PhotoGrid-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		624112FF1909D087E81F6BB7170C9810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF572C372EDE61D2E6DD0380D1F04E0 /* ArgumentCaptor.swift in Sources */,
+				5FAB9E918F7A7EB750919075567343A3 /* Count.swift in Sources */,
+				B33F3975D8EDA297562AC3C1E63C833C /* Countable.swift in Sources */,
+				3A279683BA3B88D2A710B5DDC97244A9 /* CustomAssertions.swift in Sources */,
+				EA69D99CAF97A10C6239E80E08A3FE1F /* GenericAttribute.swift in Sources */,
+				B86737D83BB17B733FA51CE3FD9F74B1 /* Matcher.swift in Sources */,
+				88988152A5D26AC6BA522D943AB38A54 /* Mock+Assertions.swift in Sources */,
+				AFBF2EF1E4122F518C86704738D236CE /* Mock.swift in Sources */,
+				F84848EF117E2E2814965C0AB235A22C /* MockyAssert.swift in Sources */,
+				65D5E1908FD72B75380914D347589141 /* Parameter+Literals.swift in Sources */,
+				9CB1A0CEFF409D780C4632458DB10C85 /* Parameter.swift in Sources */,
+				C341424D2DC4E88A99A9A14223F4782D /* Policies.swift in Sources */,
+				180A43314830D6D48092ED79ADC3F664 /* Stubbing.swift in Sources */,
+				26F5DECB6A85090D070C01C38433EFF4 /* SwiftyMocky-dummy.m in Sources */,
+				97C94B79ACDA484FD962597240004F73 /* SwiftyMockyTestObserver.swift in Sources */,
+				5DF58CEF510DB311F7E1DEB65A744697 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A9ECC78F749C39B41BF4A7A22B8AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0BE36956530AF193799A591E87C063 /* Pods-PhotoGridTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C94538B1117C2CF622E65597FCDD083D /* PBXTargetDependency */ = {
+		0D3CD212467565F10BC9703E51949407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sourcery;
+			target = 4D8229B0397AE8C2F7C11B3F9EFC9362 /* Sourcery */;
+			targetProxy = 634AEF051C06DF089CF855A7E3AC3C5D /* PBXContainerItemProxy */;
+		};
+		C9C216030ADDB6A2A2F26E759482E37F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 8A955A6ED87F6CCD539522F6063EDE84 /* PBXContainerItemProxy */;
+			targetProxy = 2A480448DE32D09E2C4569E596581C29 /* PBXContainerItemProxy */;
+		};
+		CA376A6E8971821AB0C2CF55C5919F46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sourcery;
+			target = 4D8229B0397AE8C2F7C11B3F9EFC9362 /* Sourcery */;
+			targetProxy = 71DD8323F183EAEED4252BCF9053C4B4 /* PBXContainerItemProxy */;
+		};
+		E1B6510AC0CB461CE2A9D5A15ABC36E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyMocky;
+			target = 4E1D382CC4BD286E42005EFFC61B9445 /* SwiftyMocky */;
+			targetProxy = 622E508A3AEAE1A8916D201EB0D7C353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		15E86870F87CC0D55779091A99DE6ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFF33D8D46C4FCB7E5CFB1F80142355A /* Pods-PhotoGrid.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PhotoGrid/Pods-PhotoGrid-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGrid/Pods-PhotoGrid.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23E39E867CC1FDCEA6D063BF766EC4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72615FC066DDBC891E253D6EC4AC9663 /* Sourcery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DD7EC4F9469558E37245390CC4F73CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2A577A005F34E2DA501F8E010261876 /* SwiftyMocky.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyMocky/SwiftyMocky-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MODULEMAP_FILE = Headers/Public/SwiftyMocky/SwiftyMocky.modulemap;
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyMocky;
+				PRODUCT_NAME = SwiftyMocky;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,11 +705,12 @@
 			};
 			name = Debug;
 		};
-		5FE20F0A99BE3C417BA6F4A2152DD96B /* Release */ = {
+		6153D09D7132DE02C32DB6248B7E9F51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 811EBCB3856AE9490CC08E930F8E8823 /* Pods-PhotoGrid (iOS).release.xcconfig */;
+			baseConfigurationReference = C012DECDD769C405B27DCF31D4435493 /* Pods-PhotoGrid.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -320,7 +720,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PhotoGrid (iOS)/Pods-PhotoGrid (iOS)-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PhotoGrid/Pods-PhotoGrid-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,7 +729,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGrid (iOS)/Pods-PhotoGrid (iOS).modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGrid/Pods-PhotoGrid.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -343,43 +743,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		76CAD5B10419D106A78A29672D9B9F95 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8190831D1ED3B5586A43FC2AAF8A781E /* Pods-PhotoGrid (iOS).debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PhotoGrid (iOS)/Pods-PhotoGrid (iOS)-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGrid (iOS)/Pods-PhotoGrid (iOS).modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -443,12 +806,103 @@
 			};
 			name = Release;
 		};
+		90E3B45A7C9BD31DF254EE93DB559DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2369F060022ACBE55329B71C0D39DDE /* SwiftyMocky.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyMocky/SwiftyMocky-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MODULEMAP_FILE = Headers/Public/SwiftyMocky/SwiftyMocky.modulemap;
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyMocky;
+				PRODUCT_NAME = SwiftyMocky;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		986032FDC1962AF0BF092DD2D2DE37B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 400563086EB8AAA1D27A496A57707542 /* Pods-PhotoGridTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGridTests/Pods-PhotoGridTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			baseConfigurationReference = 583E736F64C9FAD428C1E2C3CE06938D /* SwiftLint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D91982B953525B098148BE31E6FD00C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ED0D41B0BBD5D20794E25A4BECC07DE /* Pods-PhotoGridTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PhotoGridTests/Pods-PhotoGridTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E91A47D73EED5675F4EEE1FC381BA911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9528C359DEDDAD995921E8A6628A2D /* Sourcery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,10 +916,11 @@
 		};
 		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			baseConfigurationReference = 94098C3F6BC651A5721AC1CF71E32FFE /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,11 +943,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9675C54C0FFBAA1357C07D4905F483A2 /* Build configuration list for PBXNativeTarget "Pods-PhotoGrid (iOS)" */ = {
+		668C37B385A672F1FA4DF527C3416C49 /* Build configuration list for PBXNativeTarget "Pods-PhotoGrid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76CAD5B10419D106A78A29672D9B9F95 /* Debug */,
-				5FE20F0A99BE3C417BA6F4A2152DD96B /* Release */,
+				15E86870F87CC0D55779091A99DE6ACF /* Debug */,
+				6153D09D7132DE02C32DB6248B7E9F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C0FA8664472892B08200EA125A01D5C /* Build configuration list for PBXAggregateTarget "Sourcery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E39E867CC1FDCEA6D063BF766EC4CA /* Debug */,
+				E91A47D73EED5675F4EEE1FC381BA911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94B2DFA7DC44F1345DBD9FC57D35EFB4 /* Build configuration list for PBXNativeTarget "Pods-PhotoGridTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986032FDC1962AF0BF092DD2D2DE37B9 /* Debug */,
+				D91982B953525B098148BE31E6FD00C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -502,6 +975,15 @@
 			buildConfigurations = (
 				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
 				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3E17ADB75EABFC750649B1AC913C6AD /* Build configuration list for PBXNativeTarget "SwiftyMocky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E3B45A7C9BD31DF254EE93DB559DBB /* Debug */,
+				2DD7EC4F9469558E37245390CC4F73CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

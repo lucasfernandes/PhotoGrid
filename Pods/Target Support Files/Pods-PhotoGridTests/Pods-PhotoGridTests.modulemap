@@ -1,0 +1,6 @@
+module Pods_PhotoGridTests {
+  umbrella header "Pods-PhotoGridTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

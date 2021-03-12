@@ -1,6 +1,6 @@
 //
 //  ImagePicker.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 24/02/21.
 //

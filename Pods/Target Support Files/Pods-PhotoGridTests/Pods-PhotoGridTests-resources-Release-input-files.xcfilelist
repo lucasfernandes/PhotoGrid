@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-PhotoGridTests/Pods-PhotoGridTests-resources.sh
+${PODS_ROOT}/SwiftyMocky/get_sourcery.sh
+${PODS_ROOT}/SwiftyMocky/Sources/SwiftyMocky/Mock.swifttemplate

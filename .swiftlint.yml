@@ -4,12 +4,14 @@ disabled_rules:
 - multiple_closures_with_trailing_closure
 - todo
 - redundant_string_enum_value
+- comment_spacing
 opt_in_rules:
 - empty_string
 excluded:
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib
+- PhotoGridTests/Mock.generated.swift
 line_length:
     warning: 150
     error: 200

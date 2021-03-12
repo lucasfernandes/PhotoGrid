@@ -398,9 +398,9 @@
             filePath = "Shared/Store/PhotoStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "saveImage(image:identifier:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getAllPhotos()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,25 +446,9 @@
             filePath = "Shared/Store/PhotoStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "onAfterSaveImageToLibrary(image:error:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ED8323D1-4970-4E61-BB10-956BDA1D5EEE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Store/PhotoStore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "onAfterSaveImageToLibrary(image:error:)"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "deletePhoto(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

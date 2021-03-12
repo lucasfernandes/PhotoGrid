@@ -67,11 +67,13 @@
       "size" : "60x60"
     },
     {
+      "filename" : "notification-icon~ipad.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
+      "filename" : "notification-icon~ipad@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"

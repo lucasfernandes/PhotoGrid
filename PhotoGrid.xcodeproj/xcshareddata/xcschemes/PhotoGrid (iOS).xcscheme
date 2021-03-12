@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E319904625E6EB96005D5C43"
                BuildableName = "PhotoGrid.app"
-               BlueprintName = "PhotoGrid (iOS)"
+               BlueprintName = "PhotoGrid"
                ReferencedContainer = "container:PhotoGrid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E319904625E6EB96005D5C43"
             BuildableName = "PhotoGrid.app"
-            BlueprintName = "PhotoGrid (iOS)"
+            BlueprintName = "PhotoGrid"
             ReferencedContainer = "container:PhotoGrid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E319904625E6EB96005D5C43"
             BuildableName = "PhotoGrid.app"
-            BlueprintName = "PhotoGrid (iOS)"
+            BlueprintName = "PhotoGrid"
             ReferencedContainer = "container:PhotoGrid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,6 +1,6 @@
 //
 //  Message.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 26/02/21.
 //

@@ -1,6 +1,6 @@
 //
 //  PHAsset+withImageRequest.swift
-//  PhotoGrid (iOS)
+//  PhotoGrid
 //
 //  Created by Lucas Silveira on 27/02/21.
 //
@@ -9,7 +9,7 @@ import UIKit
 import Photos
 
 extension PHAsset {
-    var image: UIImage {
+    var image: UIImage { 
         var thumbnail = UIImage()
         let imageManager = PHCachingImageManager()
         
