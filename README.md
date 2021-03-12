@@ -15,4 +15,4 @@ You can mark your prefered photos like favorites also.
 
   Photos      |  Dark Mode  |  
 :------------:|:-------------:
-<img src="https://user-images.githubusercontent.com/29531/109706593-e946fb80-7b77-11eb-9960-b992611d20e2.png" width="140">|<img src="https://user-images.githubusercontent.com/29531/109711299-79d40a80-7b7d-11eb-8e97-2141dcb0ae63.png" width="140">
+<img src="https://user-images.githubusercontent.com/29531/109706593-e946fb80-7b77-11eb-9960-b992611d20e2.png" width="400">|<img src="https://user-images.githubusercontent.com/29531/109711299-79d40a80-7b7d-11eb-8e97-2141dcb0ae63.png" width="400">
