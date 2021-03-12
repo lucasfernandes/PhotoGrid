@@ -1,6 +1,6 @@
 # PhotoGrid
 
-PhotoGrid is a simple app to let your best photos organized. <br/>
+PhotoGrid is a simple SwiftUI app to let your best photos organized. <br/>
 You can mark your prefered photos like favorites also.
 
 ## Features
