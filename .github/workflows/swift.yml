@@ -1,37 +1,40 @@
-name: Swift
+name: ci
 
 on:
   workflow_dispatch:
 #   push:
-#     branches: [ main ]
+#     branches: [ challenge ]
 #   pull_request:
-#     branches: [ main ]
+#     branches: [ challenge ]
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Force Xcode 12
-      run: pwd && sudo xcode-select -switch /Applications/Xcode_12.4.app
-    - name: Init Package
-      run: Swift package init --type library
-    - name: Build
-      run: |
-        xcodebuild clean
-        xcodebuild build -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO      
-    - name: Tests
-      run: |
-        xcodebuild clean
-        xcodebuild test -workspace PhotoGrid.xcworkspace -scheme "PhotoGrid (iOS)" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: CocoaPod Install
+        run: pod install
+      - name: iOS build setup
+        run: |
+          xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+      - name: Tests
+        run: |
+          xcodebuild clean
+          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
       
-      
-  deploy-main:
-    runs-on: macos-latest
+  sonarcloud:
+    runs-on: ubuntu-latest
     environment: 
-      name: main
-      url: 'google.com'
+      name: challenge
+      url: skeletorapps.com
     needs: build
     steps:
-      - name: Some script
-        run: echo Deploy Main
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
